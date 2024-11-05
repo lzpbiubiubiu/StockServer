@@ -1,0 +1,2 @@
+module Other
+singleton UIConfig	1.0 UIConfig.qml

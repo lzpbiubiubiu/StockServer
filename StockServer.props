@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros">
+    <SpdlogDir>$(SolutionDir)External/spdlog/include</SpdlogDir>
+    <OpenSslDir>$(SolutionDir)External/openssl</OpenSslDir>
+    <JsoncppDir>$(SolutionDir)External/jsoncpp/include</JsoncppDir>
+    <HttpLibDir>$(SolutionDir)External/httplib</HttpLibDir>
+    <CourgetteDir>$(SolutionDir)External/courgette</CourgetteDir>
+    <IncludeDir>$(SolutionDir);$(SpdlogDir);$(JsoncppDir);$(HttpLibDir);$(CourgetteDir);$(OpenSslDir)/include;.</IncludeDir>
+    <BuildDir>$(SolutionDir)Build\$(Configuration)\</BuildDir>
+    <LibDir>$(BuildDir);$(OpenSslDir)/lib</LibDir>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OutDir>$(BuildDir)</OutDir>
+    <IntDir>$(BuildDir)\$(ProjectName).obj\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(IncludeDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>ENABLE_MSVC_UTF8;_SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(LibDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <Lib>
+      <AdditionalLibraryDirectories>$(LibDir)</AdditionalLibraryDirectories>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <BuildMacro Include="SpdlogDir">
+      <Value>$(SpdlogDir)</Value>
+    </BuildMacro>
+    <BuildMacro Include="OpenSslDir">
+      <Value>$(OpenSslDir)</Value>
+    </BuildMacro>
+    <BuildMacro Include="JsoncppDir">
+      <Value>$(JsoncppDir)</Value>
+    </BuildMacro>
+    <BuildMacro Include="HttpLibDir">
+      <Value>$(HttpLibDir)</Value>
+    </BuildMacro>
+    <BuildMacro Include="CourgetteDir">
+      <Value>$(CourgetteDir)</Value>
+    </BuildMacro>
+    <BuildMacro Include="IncludeDir">
+      <Value>$(IncludeDir)</Value>
+    </BuildMacro>
+    <BuildMacro Include="BuildDir">
+      <Value>$(BuildDir)</Value>
+    </BuildMacro>
+    <BuildMacro Include="LibDir">
+      <Value>$(LibDir)</Value>
+    </BuildMacro>
+  </ItemGroup>
+</Project>

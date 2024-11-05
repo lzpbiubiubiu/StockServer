@@ -1,0 +1,28 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Qml/MainWindow.qml</file>
+        <file>Qml/Component/qmldir</file>
+        <file>Qml/Component/UIButton.qml</file>
+        <file>Qml/Component/UICalendarDialog.qml</file>
+        <file>Qml/Component/UIDialog.qml</file>
+        <file>Qml/Component/UIFocusArea.qml</file>
+        <file>Qml/Component/UIImageButton.qml</file>
+        <file>Qml/Component/UILabelButton.qml</file>
+        <file>Qml/Component/UILoading.qml</file>
+        <file>Qml/Component/UIMessageBox.qml</file>
+        <file>Qml/Component/UIToast.qml</file>
+        <file>Qml/Other/qmldir</file>
+        <file>Qml/Other/UIConfig.qml</file>
+        <file>Qml/Page/Page.qml</file>
+        <file>Qml/Page/qmldir</file>
+        <file>Resources/Images/stock_server.ico</file>
+        <file>Resources/Images/launcher_bg.png</file>
+        <file>Resources/Images/loading.gif</file>
+        <file>Resources/Images/network_error.svg</file>
+        <file>Resources/Images/network_ok.svg</file>
+        <file>Resources/Images/quit.svg</file>
+        <file>Resources/Images/refresh.svg</file>
+        <file>Resources/Images/tray.svg</file>
+        <file>Qml/Page/MainPage.qml</file>
+    </qresource>
+</RCC>

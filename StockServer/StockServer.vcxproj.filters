@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>qrc;rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Form Files">
+      <UniqueIdentifier>{99349809-55BA-4b9d-BF79-8FDBB0286EB3}</UniqueIdentifier>
+      <Extensions>ui</Extensions>
+    </Filter>
+    <Filter Include="UI">
+      <UniqueIdentifier>{983f23e5-837a-4a9c-ac5f-a2d55e212b73}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Qml">
+      <UniqueIdentifier>{5cc428e2-7c52-402d-bf87-109cc73be727}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Extras">
+      <UniqueIdentifier>{99b0e3b6-2777-49a9-8e94-fe1cb3d23722}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI\Component">
+      <UniqueIdentifier>{587f4cf5-7f6c-43e1-9165-74c14fd9fc33}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI\Page">
+      <UniqueIdentifier>{4c3174fa-6b53-40e6-ae6e-97b9fe7ec92a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI\Panel">
+      <UniqueIdentifier>{8cb90060-6f3b-4ddc-a2b1-379017f45698}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Qml\Component">
+      <UniqueIdentifier>{ffd573c5-edf3-4095-ab9c-b5137028d83c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Qml\Other">
+      <UniqueIdentifier>{f67a01f9-3180-45d4-872a-9756f699af11}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Qml\Page">
+      <UniqueIdentifier>{a47af04f-bda5-4f70-ae01-bb58cddfe5d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Qml\Panel">
+      <UniqueIdentifier>{96d96141-1827-44d3-86e2-024dff69763f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI\Page\Controller">
+      <UniqueIdentifier>{32a7f59e-f510-41cb-80bf-9b398b8196eb}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <QtRcc Include="StockServer.qrc">
+      <Filter>Resource Files</Filter>
+    </QtRcc>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Application.cpp" />
+    <ClCompile Include="UI\MainWindow.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\Page\Page.cpp">
+      <Filter>UI\Page</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\Page\Controller\PageController.cpp">
+      <Filter>UI\Page\Controller</Filter>
+    </ClCompile>
+    <ClCompile Include="Extras\HttpServerManager.cpp">
+      <Filter>Extras</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\Page\MainPage.cpp">
+      <Filter>UI\Page</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\Page\Controller\MainPageController.cpp">
+      <Filter>UI\Page\Controller</Filter>
+    </ClCompile>
+    <ClCompile Include="Extras\GarbageManager.cpp">
+      <Filter>Extras</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="Application.h" />
+    <QtMoc Include="UI\MainWindow.h">
+      <Filter>UI</Filter>
+    </QtMoc>
+    <QtMoc Include="UI\Page\Page.h">
+      <Filter>UI\Page</Filter>
+    </QtMoc>
+    <QtMoc Include="UI\Page\Controller\PageController.h">
+      <Filter>UI\Page\Controller</Filter>
+    </QtMoc>
+    <QtMoc Include="Extras\HttpServerManager.h">
+      <Filter>Extras</Filter>
+    </QtMoc>
+    <QtMoc Include="UI\Page\MainPage.h">
+      <Filter>UI\Page</Filter>
+    </QtMoc>
+    <QtMoc Include="UI\Page\Controller\MainPageController.h">
+      <Filter>UI\Page\Controller</Filter>
+    </QtMoc>
+    <QtMoc Include="Extras\GarbageManager.h">
+      <Filter>Extras</Filter>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Qml\MainWindow.qml">
+      <Filter>Qml</Filter>
+    </None>
+    <None Include="Qml\Component\qmldir">
+      <Filter>Qml\Component</Filter>
+    </None>
+    <None Include="Qml\Component\UIButton.qml">
+      <Filter>Qml\Component</Filter>
+    </None>
+    <None Include="Qml\Component\UICalendarDialog.qml">
+      <Filter>Qml\Component</Filter>
+    </None>
+    <None Include="Qml\Component\UIDialog.qml">
+      <Filter>Qml\Component</Filter>
+    </None>
+    <None Include="Qml\Component\UIFocusArea.qml">
+      <Filter>Qml\Component</Filter>
+    </None>
+    <None Include="Qml\Component\UIImageButton.qml">
+      <Filter>Qml\Component</Filter>
+    </None>
+    <None Include="Qml\Component\UILabelButton.qml">
+      <Filter>Qml\Component</Filter>
+    </None>
+    <None Include="Qml\Component\UILoading.qml">
+      <Filter>Qml\Component</Filter>
+    </None>
+    <None Include="Qml\Component\UIMessageBox.qml">
+      <Filter>Qml\Component</Filter>
+    </None>
+    <None Include="Qml\Component\UIToast.qml">
+      <Filter>Qml\Component</Filter>
+    </None>
+    <None Include="Qml\Page\Page.qml">
+      <Filter>Qml\Page</Filter>
+    </None>
+    <None Include="Qml\Page\qmldir">
+      <Filter>Qml\Page</Filter>
+    </None>
+    <None Include="Qml\Other\qmldir">
+      <Filter>Qml\Other</Filter>
+    </None>
+    <None Include="Qml\Other\UIConfig.qml">
+      <Filter>Qml\Other</Filter>
+    </None>
+    <None Include="Qml\Page\MainPage.qml">
+      <Filter>Qml\Page</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="StockServer.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Resources\Images\stock_server.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+</Project>

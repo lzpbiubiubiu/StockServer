@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="ModuleData.h" />
+    <ClInclude Include="ModuleDataApi.h" />
+    <ClInclude Include="Core\GlobalData.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Config.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\ConvertUtil.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="Database\StockServerDB.h">
+      <Filter>Database</Filter>
+    </ClInclude>
+    <ClInclude Include="Database\BusinessDB.h">
+      <Filter>Database</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ModuleData.cpp" />
+    <ClCompile Include="Core\GlobalData.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Entity\VersionEntity.cpp">
+      <Filter>Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\ConvertUtil.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\DatabaseManager.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Database\StockServerDB.cpp">
+      <Filter>Database</Filter>
+    </ClCompile>
+    <ClCompile Include="Database\BusinessDB.cpp">
+      <Filter>Database</Filter>
+    </ClCompile>
+    <ClCompile Include="Entity\ConfigWareEntity.cpp">
+      <Filter>Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="Entity\UserLoginEntity.cpp">
+      <Filter>Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="Entity\OrderEntity.cpp">
+      <Filter>Entity</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Core">
+      <UniqueIdentifier>{b0e96057-205a-44f6-8ff7-138dae11b02a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Database">
+      <UniqueIdentifier>{eb271b22-d348-408d-ad35-393ca497ec6a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Entity">
+      <UniqueIdentifier>{4469348d-0dfb-46d7-bc9e-9692f4699994}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dml">
+      <UniqueIdentifier>{6162ef17-e9fd-4ce8-94ff-125f7f9c85a3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="Entity\VersionEntity.h">
+      <Filter>Entity</Filter>
+    </QtMoc>
+    <QtMoc Include="Core\DatabaseManager.h">
+      <Filter>Core</Filter>
+    </QtMoc>
+    <QtMoc Include="Entity\ConfigWareEntity.h">
+      <Filter>Entity</Filter>
+    </QtMoc>
+    <QtMoc Include="Core\GlobalStructData.h">
+      <Filter>Core</Filter>
+    </QtMoc>
+    <QtMoc Include="Entity\UserLoginEntity.h">
+      <Filter>Entity</Filter>
+    </QtMoc>
+    <QtMoc Include="Entity\OrderEntity.h">
+      <Filter>Entity</Filter>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="ModuleData.rc" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="ModuleProtocolApi.h" />
+    <ClInclude Include="ModuleProtocol.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="Server\Terminal\UserLoginRouter.h">
+      <Filter>Server\Terminal</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ModuleProtocol.cpp" />
+    <ClCompile Include="Server\Terminal\HeartbeatRouter.cpp">
+      <Filter>Server\Terminal</Filter>
+    </ClCompile>
+    <ClCompile Include="Server\Terminal\GetConfigWaresRouter.cpp">
+      <Filter>Server\Terminal</Filter>
+    </ClCompile>
+    <ClCompile Include="Server\Sale\HytradeInfoRouter.cpp">
+      <Filter>Server\Sale</Filter>
+    </ClCompile>
+    <ClCompile Include="Server\Terminal\UserLoginRouter.cpp">
+      <Filter>Server\Terminal</Filter>
+    </ClCompile>
+    <ClCompile Include="Server\Storage\ModifyConfigWareRouter.cpp">
+      <Filter>Server\Storage</Filter>
+    </ClCompile>
+    <ClCompile Include="Server\Sale\QueryOrderReportRouter.cpp">
+      <Filter>Server\Sale</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Server">
+      <UniqueIdentifier>{5ac0cdf8-7700-4dec-a686-e110a96df172}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Server\Sale">
+      <UniqueIdentifier>{c6e81635-d325-4e67-bc2b-202f2211db03}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Server\Terminal">
+      <UniqueIdentifier>{4dd0d0ca-f337-48fd-8205-3d37b71ae0eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Server\Storage">
+      <UniqueIdentifier>{5a3bae17-a7d9-4387-bcac-ea10fd272c5d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="ModuleProtocol.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="Server\Terminal\HeartbeatRouter.h">
+      <Filter>Server\Terminal</Filter>
+    </QtMoc>
+    <QtMoc Include="Server\Terminal\GetConfigWaresRouter.h">
+      <Filter>Server\Terminal</Filter>
+    </QtMoc>
+    <QtMoc Include="Server\Sale\HytradeInfoRouter.h">
+      <Filter>Server\Sale</Filter>
+    </QtMoc>
+    <QtMoc Include="Server\Storage\ModifyConfigWareRouter.h">
+      <Filter>Server\Storage</Filter>
+    </QtMoc>
+    <QtMoc Include="Server\Sale\QueryOrderReportRouter.h">
+      <Filter>Server\Sale</Filter>
+    </QtMoc>
+  </ItemGroup>
+</Project>

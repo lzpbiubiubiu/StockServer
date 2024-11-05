@@ -1,0 +1,3 @@
+module Panel
+FunctionPanel		1.0 FunctionPanel.qml
+TerminalPanel		1.0 TerminalPanel.qml

@@ -1,0 +1,12 @@
+module Component
+UIButton			1.0 UIButton.qml
+UICalendarDialog	1.0 UICalendarDialog.qml
+UIDialog			1.0 UIDialog.qml
+UIFocusArea			1.0 UIFocusArea.qml
+UILoading			1.0 UILoading.qml
+UIMessageBox		1.0 UIMessageBox.qml
+UIToast 			1.0 UIToast.qml
+StatusBar			1.0 StatusBar.qml
+UILabelButton		1.0 UILabelButton.qml
+UIImageButton		1.0 UIImageButton.qml
+FileDialog			1.0 FileDialog.qml

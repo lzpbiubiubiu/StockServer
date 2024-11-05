@@ -1,0 +1,4 @@
+module Page
+Page			1.0 Page.qml
+StartupPage		1.0 StartupPage.qml
+MainPage		1.0 MainPage.qml

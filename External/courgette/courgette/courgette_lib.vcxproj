@@ -1,0 +1,489 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{2340F652-F6CD-48FD-9428-7B4EBE6028E6}</ProjectGuid>
+    <RootNamespace>courgette_lib</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.20348.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\StockServer.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\StockServer.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>14.0.25431.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(BuildDir)</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <TargetName>$(ProjectName)</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(BuildDir)</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\third_party\wtl\include;..;..\third_party\lzma_sdk;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WIN32_WINNT=0x0602;WINVER=0x0602;_DEBUG;_LIB;_WINDOWS;NOMINMAX;PSAPI_VERSION=1;_CRT_RAND_S;CERT_CHAIN_PARA_HAS_EXTRA_FIELDS;WIN32_LEAN_AND_MEAN;_ATL_NO_OPENGL;_HAS_EXCEPTIONS=0;_SECURE_ATL;CHROMIUM_BUILD;TOOLKIT_VIEWS=1;USE_LIBJPEG_TURBO=1;ENABLE_ONE_CLICK_SIGNIN;ENABLE_REMOTING=1;ENABLE_WEBRTC=1;ENABLE_CONFIGURATION_POLICY;ENABLE_INPUT_SPEECH;ENABLE_NOTIFICATIONS;ENABLE_GPU=1;ENABLE_EGLIMAGE=1;__STD_C;_CRT_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_DEPRECATE;NTDDI_VERSION=0x06020000;ENABLE_TASK_MANAGER=1;ENABLE_EXTENSIONS=1;ENABLE_PLUGIN_INSTALLATION=1;ENABLE_PLUGINS=1;ENABLE_SESSION_SERVICE=1;ENABLE_THEMES=1;ENABLE_AUTOFILL_DIALOG=1;ENABLE_BACKGROUND=1;ENABLE_AUTOMATION=1;ENABLE_GOOGLE_NOW=1;ENABLE_LANGUAGE_DETECTION=1;ENABLE_PRINTING=1;ENABLE_CAPTIVE_PORTAL_DETECTION=1;ENABLE_APP_LIST=1;ENABLE_MESSAGE_CENTER=1;ENABLE_SETTINGS_APP=1;ENABLE_MANAGED_USERS=1;__STDC_CONSTANT_MACROS;__STDC_FORMAT_MACROS;DYNAMIC_ANNOTATIONS_ENABLED=1;WTF_USE_DYNAMIC_ANNOTATIONS=1;_7ZIP_ST;_SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS;UNICODE;_UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <PrecompiledHeader />
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Lib />
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>..\third_party\wtl\include;..;..\third_party\lzma_sdk;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;_WINDOWS;NOMINMAX;PSAPI_VERSION=1;_CRT_RAND_S;CERT_CHAIN_PARA_HAS_EXTRA_FIELDS;WIN32_LEAN_AND_MEAN;_ATL_NO_OPENGL;_HAS_EXCEPTIONS=0;_SECURE_ATL;CHROMIUM_BUILD;TOOLKIT_VIEWS=1;USE_LIBJPEG_TURBO=1;ENABLE_ONE_CLICK_SIGNIN;ENABLE_REMOTING=1;ENABLE_WEBRTC=1;ENABLE_CONFIGURATION_POLICY;ENABLE_INPUT_SPEECH;ENABLE_NOTIFICATIONS;ENABLE_GPU=1;ENABLE_EGLIMAGE=1;__STD_C;_CRT_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_DEPRECATE;NTDDI_VERSION=0x06020000;ENABLE_TASK_MANAGER=1;ENABLE_EXTENSIONS=1;ENABLE_PLUGIN_INSTALLATION=1;ENABLE_PLUGINS=1;ENABLE_SESSION_SERVICE=1;ENABLE_THEMES=1;ENABLE_AUTOFILL_DIALOG=1;ENABLE_BACKGROUND=1;ENABLE_AUTOMATION=1;ENABLE_GOOGLE_NOW=1;ENABLE_LANGUAGE_DETECTION=1;ENABLE_PRINTING=1;ENABLE_CAPTIVE_PORTAL_DETECTION=1;ENABLE_APP_LIST=1;ENABLE_MESSAGE_CENTER=1;ENABLE_SETTINGS_APP=1;ENABLE_MANAGED_USERS=1;__STDC_CONSTANT_MACROS;__STDC_FORMAT_MACROS;DYNAMIC_ANNOTATIONS_ENABLED=1;WTF_USE_DYNAMIC_ANNOTATIONS=1;_7ZIP_ST;UNICODE;_UNICODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\base\at_exit.cc" />
+    <ClCompile Include="..\base\base_paths.cc" />
+    <ClCompile Include="..\base\base_paths_win.cc" />
+    <ClCompile Include="..\base\base_switches.cc" />
+    <ClCompile Include="..\base\callback_internal.cc" />
+    <ClCompile Include="..\base\command_line.cc" />
+    <ClCompile Include="..\base\cpu.cc" />
+    <ClCompile Include="..\base\debug\alias.cc" />
+    <ClCompile Include="..\base\debug\crash_logging.cc" />
+    <ClCompile Include="..\base\debug\debugger.cc" />
+    <ClCompile Include="..\base\debug\debugger_win.cc" />
+    <ClCompile Include="..\base\debug\debug_on_start_win.cc" />
+    <ClCompile Include="..\base\debug\profiler.cc" />
+    <ClCompile Include="..\base\debug\stack_trace.cc" />
+    <ClCompile Include="..\base\debug\stack_trace_win.cc" />
+    <ClCompile Include="..\base\debug\trace_event_impl.cc" />
+    <ClCompile Include="..\base\debug\trace_event_win.cc" />
+    <ClCompile Include="..\base\environment.cc" />
+    <ClCompile Include="..\base\event_recorder_stubs.cc" />
+    <ClCompile Include="..\base\event_recorder_win.cc" />
+    <ClCompile Include="..\base\files\file_path.cc" />
+    <ClCompile Include="..\base\files\file_path_watcher.cc" />
+    <ClCompile Include="..\base\files\file_path_watcher_win.cc" />
+    <ClCompile Include="..\base\files\file_util_proxy.cc" />
+    <ClCompile Include="..\base\files\important_file_writer.cc" />
+    <ClCompile Include="..\base\files\memory_mapped_file.cc" />
+    <ClCompile Include="..\base\files\memory_mapped_file_win.cc" />
+    <ClCompile Include="..\base\files\scoped_temp_dir.cc" />
+    <ClCompile Include="..\base\file_util.cc" />
+    <ClCompile Include="..\base\file_util_win.cc" />
+    <ClCompile Include="..\base\file_version_info_win.cc" />
+    <ClCompile Include="..\base\json\json_file_value_serializer.cc" />
+    <ClCompile Include="..\base\json\json_parser.cc" />
+    <ClCompile Include="..\base\json\json_reader.cc" />
+    <ClCompile Include="..\base\json\json_string_value_serializer.cc" />
+    <ClCompile Include="..\base\json\json_writer.cc" />
+    <ClCompile Include="..\base\json\string_escape.cc" />
+    <ClCompile Include="..\base\lazy_instance.cc" />
+    <ClCompile Include="..\base\location.cc" />
+    <ClCompile Include="..\base\logging.cc" />
+    <ClCompile Include="..\base\logging_win.cc" />
+    <ClCompile Include="..\base\md5.cc" />
+    <ClCompile Include="..\base\memory\aligned_memory.cc" />
+    <ClCompile Include="..\base\memory\discardable_memory.cc" />
+    <ClCompile Include="..\base\memory\ref_counted.cc" />
+    <ClCompile Include="..\base\memory\ref_counted_memory.cc" />
+    <ClCompile Include="..\base\memory\shared_memory_win.cc" />
+    <ClCompile Include="..\base\memory\singleton.cc" />
+    <ClCompile Include="..\base\memory\weak_ptr.cc" />
+    <ClCompile Include="..\base\message_loop.cc" />
+    <ClCompile Include="..\base\message_loop\message_loop_proxy.cc" />
+    <ClCompile Include="..\base\message_loop\message_loop_proxy_impl.cc" />
+    <ClCompile Include="..\base\message_pump.cc" />
+    <ClCompile Include="..\base\message_pump_default.cc" />
+    <ClCompile Include="..\base\message_pump_win.cc" />
+    <ClCompile Include="..\base\metrics\bucket_ranges.cc" />
+    <ClCompile Include="..\base\metrics\field_trial.cc" />
+    <ClCompile Include="..\base\metrics\histogram.cc" />
+    <ClCompile Include="..\base\metrics\histogram_base.cc" />
+    <ClCompile Include="..\base\metrics\histogram_samples.cc" />
+    <ClCompile Include="..\base\metrics\histogram_snapshot_manager.cc" />
+    <ClCompile Include="..\base\metrics\sample_map.cc" />
+    <ClCompile Include="..\base\metrics\sample_vector.cc" />
+    <ClCompile Include="..\base\metrics\sparse_histogram.cc" />
+    <ClCompile Include="..\base\metrics\statistics_recorder.cc" />
+    <ClCompile Include="..\base\metrics\stats_counters.cc" />
+    <ClCompile Include="..\base\metrics\stats_table.cc" />
+    <ClCompile Include="..\base\path_service.cc" />
+    <ClCompile Include="..\base\pending_task.cc" />
+    <ClCompile Include="..\base\pickle.cc" />
+    <ClCompile Include="..\base\platform_file.cc" />
+    <ClCompile Include="..\base\platform_file_win.cc" />
+    <ClCompile Include="..\base\process_util.cc" />
+    <ClCompile Include="..\base\process_util_win.cc" />
+    <ClCompile Include="..\base\process_win.cc" />
+    <ClCompile Include="..\base\profiler\alternate_timer.cc" />
+    <ClCompile Include="..\base\profiler\scoped_profile.cc" />
+    <ClCompile Include="..\base\profiler\tracked_time.cc" />
+    <ClCompile Include="..\base\run_loop.cc" />
+    <ClCompile Include="..\base\stringprintf.cc" />
+    <ClCompile Include="..\base\strings\string_number_conversions.cc" />
+    <ClCompile Include="..\base\strings\string_piece.cc" />
+    <ClCompile Include="..\base\strings\string_split.cc" />
+    <ClCompile Include="..\base\strings\sys_string_conversions_win.cc" />
+    <ClCompile Include="..\base\strings\utf_offset_string_conversions.cc" />
+    <ClCompile Include="..\base\strings\utf_string_conversion_utils.cc" />
+    <ClCompile Include="..\base\string_util.cc" />
+    <ClCompile Include="..\base\synchronization\cancellation_flag.cc" />
+    <ClCompile Include="..\base\synchronization\condition_variable_win.cc" />
+    <ClCompile Include="..\base\synchronization\lock.cc" />
+    <ClCompile Include="..\base\synchronization\lock_impl_win.cc" />
+    <ClCompile Include="..\base\synchronization\waitable_event_watcher_win.cc" />
+    <ClCompile Include="..\base\synchronization\waitable_event_win.cc" />
+    <ClCompile Include="..\base\sys_info.cc" />
+    <ClCompile Include="..\base\sys_info_win.cc" />
+    <ClCompile Include="..\base\task_runner.cc" />
+    <ClCompile Include="..\base\third_party\dmg_fp\dtoa_wrapper.cc" />
+    <ClCompile Include="..\base\third_party\dmg_fp\g_fmt.cc" />
+    <ClCompile Include="..\base\third_party\dynamic_annotations\dynamic_annotations.c" />
+    <ClCompile Include="..\base\third_party\icu\icu_utf.cc" />
+    <ClCompile Include="..\base\third_party\nspr\prtime.cc" />
+    <ClCompile Include="..\base\threading\non_thread_safe_impl.cc" />
+    <ClCompile Include="..\base\threading\platform_thread_win.cc" />
+    <ClCompile Include="..\base\threading\post_task_and_reply_impl.cc" />
+    <ClCompile Include="..\base\threading\sequenced_worker_pool.cc" />
+    <ClCompile Include="..\base\threading\simple_thread.cc" />
+    <ClCompile Include="..\base\threading\thread.cc" />
+    <ClCompile Include="..\base\threading\thread_checker_impl.cc" />
+    <ClCompile Include="..\base\threading\thread_collision_warner.cc" />
+    <ClCompile Include="..\base\threading\thread_id_name_manager.cc" />
+    <ClCompile Include="..\base\threading\thread_local_storage_win.cc" />
+    <ClCompile Include="..\base\threading\thread_local_win.cc" />
+    <ClCompile Include="..\base\threading\thread_restrictions.cc" />
+    <ClCompile Include="..\base\threading\watchdog.cc" />
+    <ClCompile Include="..\base\threading\worker_pool.cc" />
+    <ClCompile Include="..\base\threading\worker_pool_win.cc" />
+    <ClCompile Include="..\base\thread_task_runner_handle.cc" />
+    <ClCompile Include="..\base\time.cc" />
+    <ClCompile Include="..\base\timer.cc" />
+    <ClCompile Include="..\base\time_win.cc" />
+    <ClCompile Include="..\base\tracked_objects.cc" />
+    <ClCompile Include="..\base\tracking_info.cc" />
+    <ClCompile Include="..\base\utf_string_conversions.cc" />
+    <ClCompile Include="..\base\values.cc" />
+    <ClCompile Include="..\base\value_conversions.cc" />
+    <ClCompile Include="..\base\vlog.cc" />
+    <ClCompile Include="..\base\win\enum_variant.cc" />
+    <ClCompile Include="..\base\win\event_trace_controller.cc" />
+    <ClCompile Include="..\base\win\event_trace_provider.cc" />
+    <ClCompile Include="..\base\win\iat_patch_function.cc" />
+    <ClCompile Include="..\base\win\iunknown_impl.cc" />
+    <ClCompile Include="..\base\win\metro.cc" />
+    <ClCompile Include="..\base\win\object_watcher.cc" />
+    <ClCompile Include="..\base\win\pe_image.cc" />
+    <ClCompile Include="..\base\win\registry.cc" />
+    <ClCompile Include="..\base\win\resource_util.cc" />
+    <ClCompile Include="..\base\win\scoped_bstr.cc" />
+    <ClCompile Include="..\base\win\scoped_handle.cc" />
+    <ClCompile Include="..\base\win\scoped_process_information.cc" />
+    <ClCompile Include="..\base\win\scoped_variant.cc" />
+    <ClCompile Include="..\base\win\startup_information.cc" />
+    <ClCompile Include="..\base\win\text_services_message_filter.cc" />
+    <ClCompile Include="..\base\win\windows_version.cc" />
+    <ClCompile Include="..\base\win\wrapped_window_proc.cc" />
+    <ClCompile Include="..\third_party\lzma_sdk\7zAlloc.c" />
+    <ClCompile Include="..\third_party\lzma_sdk\7zBuf.c" />
+    <ClCompile Include="..\third_party\lzma_sdk\7zCrc.c" />
+    <ClCompile Include="..\third_party\lzma_sdk\7zCrcOpt.c" />
+    <ClCompile Include="..\third_party\lzma_sdk\7zDec.c" />
+    <ClCompile Include="..\third_party\lzma_sdk\7zFile.c" />
+    <ClCompile Include="..\third_party\lzma_sdk\7zIn.c" />
+    <ClCompile Include="..\third_party\lzma_sdk\7zStream.c" />
+    <ClCompile Include="..\third_party\lzma_sdk\Alloc.c" />
+    <ClCompile Include="..\third_party\lzma_sdk\Bcj2.c" />
+    <ClCompile Include="..\third_party\lzma_sdk\Bra.c" />
+    <ClCompile Include="..\third_party\lzma_sdk\Bra86.c" />
+    <ClCompile Include="..\third_party\lzma_sdk\CpuArch.c" />
+    <ClCompile Include="..\third_party\lzma_sdk\LzFind.c" />
+    <ClCompile Include="..\third_party\lzma_sdk\Lzma2Dec.c" />
+    <ClCompile Include="..\third_party\lzma_sdk\LzmaDec.c" />
+    <ClCompile Include="..\third_party\lzma_sdk\LzmaEnc.c" />
+    <ClCompile Include="..\third_party\lzma_sdk\LzmaLib.c" />
+    <ClCompile Include="adjustment_method.cc" />
+    <ClCompile Include="adjustment_method_2.cc" />
+    <ClCompile Include="assembly_program.cc" />
+    <ClCompile Include="crc.cc" />
+    <ClCompile Include="difference_estimator.cc" />
+    <ClCompile Include="disassembler.cc" />
+    <ClCompile Include="disassembler_elf_32_x86.cc" />
+    <ClCompile Include="disassembler_win32_x86.cc" />
+    <ClCompile Include="encoded_program.cc" />
+    <ClCompile Include="ensemble.cc" />
+    <ClCompile Include="ensemble_apply.cc" />
+    <ClCompile Include="ensemble_create.cc" />
+    <ClCompile Include="memory_allocator.cc" />
+    <ClCompile Include="memory_monitor.cc" />
+    <ClCompile Include="simple_delta.cc" />
+    <ClCompile Include="streams.cc" />
+    <ClCompile Include="third_party\bsdiff_apply.cc" />
+    <ClCompile Include="third_party\bsdiff_create.cc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\base\at_exit.h" />
+    <ClInclude Include="..\base\base_paths.h" />
+    <ClInclude Include="..\base\base_paths_win.h" />
+    <ClInclude Include="..\base\base_switches.h" />
+    <ClInclude Include="..\base\callback.h" />
+    <ClInclude Include="..\base\callback_helpers.h" />
+    <ClInclude Include="..\base\callback_internal.h" />
+    <ClInclude Include="..\base\cancelable_callback.h" />
+    <ClInclude Include="..\base\command_line.h" />
+    <ClInclude Include="..\base\cpu.h" />
+    <ClInclude Include="..\base\debug\alias.h" />
+    <ClInclude Include="..\base\debug\crash_logging.h" />
+    <ClInclude Include="..\base\debug\debugger.h" />
+    <ClInclude Include="..\base\debug\debug_on_start_win.h" />
+    <ClInclude Include="..\base\debug\leak_annotations.h" />
+    <ClInclude Include="..\base\debug\leak_tracker.h" />
+    <ClInclude Include="..\base\debug\profiler.h" />
+    <ClInclude Include="..\base\debug\stack_trace.h" />
+    <ClInclude Include="..\base\debug\trace_event.h" />
+    <ClInclude Include="..\base\debug\trace_event_impl.h" />
+    <ClInclude Include="..\base\debug\trace_event_win.h" />
+    <ClInclude Include="..\base\environment.h" />
+    <ClInclude Include="..\base\event_recorder.h" />
+    <ClInclude Include="..\base\files\dir_reader_fallback.h" />
+    <ClInclude Include="..\base\files\file_path.h" />
+    <ClInclude Include="..\base\files\file_path_watcher.h" />
+    <ClInclude Include="..\base\files\file_util_proxy.h" />
+    <ClInclude Include="..\base\files\important_file_writer.h" />
+    <ClInclude Include="..\base\files\memory_mapped_file.h" />
+    <ClInclude Include="..\base\files\scoped_temp_dir.h" />
+    <ClInclude Include="..\base\file_util.h" />
+    <ClInclude Include="..\base\file_version_info.h" />
+    <ClInclude Include="..\base\file_version_info_win.h" />
+    <ClInclude Include="..\base\float_util.h" />
+    <ClInclude Include="..\base\format_macros.h" />
+    <ClInclude Include="..\base\json\json_file_value_serializer.h" />
+    <ClInclude Include="..\base\json\json_parser.h" />
+    <ClInclude Include="..\base\json\json_reader.h" />
+    <ClInclude Include="..\base\json\json_string_value_serializer.h" />
+    <ClInclude Include="..\base\json\json_value_converter.h" />
+    <ClInclude Include="..\base\json\json_writer.h" />
+    <ClInclude Include="..\base\json\string_escape.h" />
+    <ClInclude Include="..\base\location.h" />
+    <ClInclude Include="..\base\logging.h" />
+    <ClInclude Include="..\base\logging_win.h" />
+    <ClInclude Include="..\base\md5.h" />
+    <ClInclude Include="..\base\memory\aligned_memory.h" />
+    <ClInclude Include="..\base\memory\discardable_memory.h" />
+    <ClInclude Include="..\base\memory\linked_ptr.h" />
+    <ClInclude Include="..\base\memory\manual_constructor.h" />
+    <ClInclude Include="..\base\memory\ref_counted.h" />
+    <ClInclude Include="..\base\memory\ref_counted_memory.h" />
+    <ClInclude Include="..\base\memory\scoped_generic_obj.h" />
+    <ClInclude Include="..\base\memory\scoped_handle.h" />
+    <ClInclude Include="..\base\memory\scoped_nsobject.h" />
+    <ClInclude Include="..\base\memory\scoped_open_process.h" />
+    <ClInclude Include="..\base\memory\scoped_policy.h" />
+    <ClInclude Include="..\base\memory\scoped_ptr.h" />
+    <ClInclude Include="..\base\memory\scoped_vector.h" />
+    <ClInclude Include="..\base\memory\shared_memory.h" />
+    <ClInclude Include="..\base\memory\singleton.h" />
+    <ClInclude Include="..\base\memory\weak_ptr.h" />
+    <ClInclude Include="..\base\message_loop.h" />
+    <ClInclude Include="..\base\message_loop\message_loop_proxy.h" />
+    <ClInclude Include="..\base\message_loop\message_loop_proxy_impl.h" />
+    <ClInclude Include="..\base\message_pump.h" />
+    <ClInclude Include="..\base\message_pump_default.h" />
+    <ClInclude Include="..\base\message_pump_glib.h" />
+    <ClInclude Include="..\base\message_pump_libevent.h" />
+    <ClInclude Include="..\base\message_pump_observer.h" />
+    <ClInclude Include="..\base\message_pump_win.h" />
+    <ClInclude Include="..\base\metrics\bucket_ranges.h" />
+    <ClInclude Include="..\base\metrics\field_trial.h" />
+    <ClInclude Include="..\base\metrics\histogram.h" />
+    <ClInclude Include="..\base\metrics\histogram_base.h" />
+    <ClInclude Include="..\base\metrics\histogram_flattener.h" />
+    <ClInclude Include="..\base\metrics\histogram_samples.h" />
+    <ClInclude Include="..\base\metrics\histogram_snapshot_manager.h" />
+    <ClInclude Include="..\base\metrics\sample_map.h" />
+    <ClInclude Include="..\base\metrics\sample_vector.h" />
+    <ClInclude Include="..\base\metrics\sparse_histogram.h" />
+    <ClInclude Include="..\base\metrics\statistics_recorder.h" />
+    <ClInclude Include="..\base\metrics\stats_counters.h" />
+    <ClInclude Include="..\base\metrics\stats_table.h" />
+    <ClInclude Include="..\base\move.h" />
+    <ClInclude Include="..\base\path_service.h" />
+    <ClInclude Include="..\base\pending_task.h" />
+    <ClInclude Include="..\base\pickle.h" />
+    <ClInclude Include="..\base\platform_file.h" />
+    <ClInclude Include="..\base\process_util.h" />
+    <ClInclude Include="..\base\profiler\alternate_timer.h" />
+    <ClInclude Include="..\base\profiler\scoped_profile.h" />
+    <ClInclude Include="..\base\profiler\tracked_time.h" />
+    <ClInclude Include="..\base\run_loop.h" />
+    <ClInclude Include="..\base\string16.h" />
+    <ClInclude Include="..\base\stringprintf.h" />
+    <ClInclude Include="..\base\strings\stringize_macros.h" />
+    <ClInclude Include="..\base\strings\string_number_conversions.h" />
+    <ClInclude Include="..\base\strings\string_piece.h" />
+    <ClInclude Include="..\base\strings\string_split.h" />
+    <ClInclude Include="..\base\strings\string_tokenizer.h" />
+    <ClInclude Include="..\base\strings\sys_string_conversions.h" />
+    <ClInclude Include="..\base\strings\utf_offset_string_conversions.h" />
+    <ClInclude Include="..\base\strings\utf_string_conversion_utils.h" />
+    <ClInclude Include="..\base\string_util.h" />
+    <ClInclude Include="..\base\string_util_win.h" />
+    <ClInclude Include="..\base\synchronization\cancellation_flag.h" />
+    <ClInclude Include="..\base\synchronization\condition_variable.h" />
+    <ClInclude Include="..\base\synchronization\lock.h" />
+    <ClInclude Include="..\base\synchronization\lock_impl.h" />
+    <ClInclude Include="..\base\synchronization\spin_wait.h" />
+    <ClInclude Include="..\base\synchronization\waitable_event.h" />
+    <ClInclude Include="..\base\synchronization\waitable_event_watcher.h" />
+    <ClInclude Include="..\base\sys_info.h" />
+    <ClInclude Include="..\base\task_runner.h" />
+    <ClInclude Include="..\base\task_runner_util.h" />
+    <ClInclude Include="..\base\third_party\dmg_fp\dmg_fp.h" />
+    <ClInclude Include="..\base\third_party\dynamic_annotations\dynamic_annotations.h" />
+    <ClInclude Include="..\base\third_party\icu\icu_utf.h" />
+    <ClInclude Include="..\base\third_party\nspr\prcpucfg.h" />
+    <ClInclude Include="..\base\third_party\nspr\prcpucfg_freebsd.h" />
+    <ClInclude Include="..\base\third_party\nspr\prcpucfg_openbsd.h" />
+    <ClInclude Include="..\base\third_party\nspr\prcpucfg_solaris.h" />
+    <ClInclude Include="..\base\third_party\nspr\prcpucfg_win.h" />
+    <ClInclude Include="..\base\third_party\nspr\prtime.h" />
+    <ClInclude Include="..\base\third_party\nspr\prtypes.h" />
+    <ClInclude Include="..\base\threading\non_thread_safe.h" />
+    <ClInclude Include="..\base\threading\non_thread_safe_impl.h" />
+    <ClInclude Include="..\base\threading\platform_thread.h" />
+    <ClInclude Include="..\base\threading\post_task_and_reply_impl.h" />
+    <ClInclude Include="..\base\threading\sequenced_worker_pool.h" />
+    <ClInclude Include="..\base\threading\simple_thread.h" />
+    <ClInclude Include="..\base\threading\thread.h" />
+    <ClInclude Include="..\base\threading\thread_checker.h" />
+    <ClInclude Include="..\base\threading\thread_checker_impl.h" />
+    <ClInclude Include="..\base\threading\thread_collision_warner.h" />
+    <ClInclude Include="..\base\threading\thread_id_name_manager.h" />
+    <ClInclude Include="..\base\threading\thread_local.h" />
+    <ClInclude Include="..\base\threading\thread_local_storage.h" />
+    <ClInclude Include="..\base\threading\thread_restrictions.h" />
+    <ClInclude Include="..\base\threading\watchdog.h" />
+    <ClInclude Include="..\base\threading\worker_pool.h" />
+    <ClInclude Include="..\base\thread_task_runner_handle.h" />
+    <ClInclude Include="..\base\time.h" />
+    <ClInclude Include="..\base\timer.h" />
+    <ClInclude Include="..\base\tracked_objects.h" />
+    <ClInclude Include="..\base\tracking_info.h" />
+    <ClInclude Include="..\base\utf_string_conversions.h" />
+    <ClInclude Include="..\base\values.h" />
+    <ClInclude Include="..\base\value_conversions.h" />
+    <ClInclude Include="..\base\vlog.h" />
+    <ClInclude Include="..\base\win\enum_variant.h" />
+    <ClInclude Include="..\base\win\event_trace_consumer.h" />
+    <ClInclude Include="..\base\win\event_trace_controller.h" />
+    <ClInclude Include="..\base\win\event_trace_provider.h" />
+    <ClInclude Include="..\base\win\iat_patch_function.h" />
+    <ClInclude Include="..\base\win\iunknown_impl.h" />
+    <ClInclude Include="..\base\win\metro.h" />
+    <ClInclude Include="..\base\win\object_watcher.h" />
+    <ClInclude Include="..\base\win\pe_image.h" />
+    <ClInclude Include="..\base\win\registry.h" />
+    <ClInclude Include="..\base\win\resource_util.h" />
+    <ClInclude Include="..\base\win\scoped_bstr.h" />
+    <ClInclude Include="..\base\win\scoped_comptr.h" />
+    <ClInclude Include="..\base\win\scoped_com_initializer.h" />
+    <ClInclude Include="..\base\win\scoped_co_mem.h" />
+    <ClInclude Include="..\base\win\scoped_gdi_object.h" />
+    <ClInclude Include="..\base\win\scoped_handle.h" />
+    <ClInclude Include="..\base\win\scoped_hdc.h" />
+    <ClInclude Include="..\base\win\scoped_hglobal.h" />
+    <ClInclude Include="..\base\win\scoped_process_information.h" />
+    <ClInclude Include="..\base\win\scoped_propvariant.h" />
+    <ClInclude Include="..\base\win\scoped_select_object.h" />
+    <ClInclude Include="..\base\win\scoped_variant.h" />
+    <ClInclude Include="..\base\win\startup_information.h" />
+    <ClInclude Include="..\base\win\text_services_message_filter.h" />
+    <ClInclude Include="..\base\win\windows_version.h" />
+    <ClInclude Include="..\base\win\wrapped_window_proc.h" />
+    <ClInclude Include="..\third_party\lzma_sdk\7z.h" />
+    <ClInclude Include="..\third_party\lzma_sdk\7zAlloc.h" />
+    <ClInclude Include="..\third_party\lzma_sdk\7zBuf.h" />
+    <ClInclude Include="..\third_party\lzma_sdk\7zCrc.h" />
+    <ClInclude Include="..\third_party\lzma_sdk\7zFile.h" />
+    <ClInclude Include="..\third_party\lzma_sdk\Alloc.h" />
+    <ClInclude Include="..\third_party\lzma_sdk\Bcj2.h" />
+    <ClInclude Include="..\third_party\lzma_sdk\Bra.h" />
+    <ClInclude Include="..\third_party\lzma_sdk\CpuArch.h" />
+    <ClInclude Include="..\third_party\lzma_sdk\LzFind.h" />
+    <ClInclude Include="..\third_party\lzma_sdk\LzHash.h" />
+    <ClInclude Include="..\third_party\lzma_sdk\Lzma2Dec.h" />
+    <ClInclude Include="..\third_party\lzma_sdk\LzmaDec.h" />
+    <ClInclude Include="..\third_party\lzma_sdk\LzmaEnc.h" />
+    <ClInclude Include="..\third_party\lzma_sdk\LzmaLib.h" />
+    <ClInclude Include="..\third_party\lzma_sdk\Types.h" />
+    <ClInclude Include="adjustment_method.h" />
+    <ClInclude Include="assembly_program.h" />
+    <ClInclude Include="courgette.h" />
+    <ClInclude Include="crc.h" />
+    <ClInclude Include="difference_estimator.h" />
+    <ClInclude Include="disassembler.h" />
+    <ClInclude Include="disassembler_elf_32_x86.h" />
+    <ClInclude Include="disassembler_win32_x86.h" />
+    <ClInclude Include="encoded_program.h" />
+    <ClInclude Include="ensemble.h" />
+    <ClInclude Include="memory_allocator.h" />
+    <ClInclude Include="patcher_x86_32.h" />
+    <ClInclude Include="patch_generator_x86_32.h" />
+    <ClInclude Include="region.h" />
+    <ClInclude Include="simple_delta.h" />
+    <ClInclude Include="streams.h" />
+    <ClInclude Include="third_party\bsdiff.h" />
+    <ClInclude Include="third_party\paged_array.h" />
+    <ClInclude Include="types_elf.h" />
+    <ClInclude Include="types_win_pe.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

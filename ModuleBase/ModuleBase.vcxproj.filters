@@ -1,0 +1,271 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Common">
+      <UniqueIdentifier>{25e755ee-f71f-49d1-902b-a9a7a746be27}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Database">
+      <UniqueIdentifier>{c34c1a14-cdc0-4123-8f38-dedd7cb0a998}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Database\Base">
+      <UniqueIdentifier>{2a45c2e9-8fb8-4171-8ea6-69f2b397126f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Database\Inl">
+      <UniqueIdentifier>{6ce30719-0242-4442-b834-6164c133466d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Database\Orm">
+      <UniqueIdentifier>{6a2edf89-c7f5-4537-b989-7aaf5cc70cdf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Http">
+      <UniqueIdentifier>{3093521c-b9e9-407d-a21a-7f21371a58ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Http\Client">
+      <UniqueIdentifier>{2938ece7-56a2-4638-9325-d77e3f8fefa1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Http\Server">
+      <UniqueIdentifier>{6924131e-7b29-4301-9f1d-85350f10365f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Log">
+      <UniqueIdentifier>{ec25f1fc-659b-48ba-9139-356b91c2b324}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Service">
+      <UniqueIdentifier>{865a823b-0b2a-4f6b-aeeb-c74de9c6d0f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Util">
+      <UniqueIdentifier>{93504b96-796a-4d52-94b1-254df1fc154a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Common\Singleton.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\System.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Database\Base\DBBase.h">
+      <Filter>Database\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Database\Base\DmlBase.h">
+      <Filter>Database\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Database\Base\EntityBase.h">
+      <Filter>Database\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Database\Base\Qd.h">
+      <Filter>Database\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Database\Orm\QdOrmBuilder.h">
+      <Filter>Database\Orm</Filter>
+    </ClInclude>
+    <ClInclude Include="Database\Orm\QdOrmClass.h">
+      <Filter>Database\Orm</Filter>
+    </ClInclude>
+    <ClInclude Include="Database\Orm\QdOrmCondition.h">
+      <Filter>Database\Orm</Filter>
+    </ClInclude>
+    <ClInclude Include="Database\Orm\QdOrmDao.h">
+      <Filter>Database\Orm</Filter>
+    </ClInclude>
+    <ClInclude Include="Database\Orm\QdOrmDefine.h">
+      <Filter>Database\Orm</Filter>
+    </ClInclude>
+    <ClInclude Include="Database\Orm\QdOrmDml.h">
+      <Filter>Database\Orm</Filter>
+    </ClInclude>
+    <ClInclude Include="Database\Orm\QdOrmFactory.h">
+      <Filter>Database\Orm</Filter>
+    </ClInclude>
+    <ClInclude Include="Database\Orm\QdOrmMember.h">
+      <Filter>Database\Orm</Filter>
+    </ClInclude>
+    <ClInclude Include="Database\Orm\QdOrmWhere.h">
+      <Filter>Database\Orm</Filter>
+    </ClInclude>
+    <ClInclude Include="Http\Client\Constants.h">
+      <Filter>Http\Client</Filter>
+    </ClInclude>
+    <ClInclude Include="Log\Log.h">
+      <Filter>Log</Filter>
+    </ClInclude>
+    <ClInclude Include="Service\IService.h">
+      <Filter>Service</Filter>
+    </ClInclude>
+    <ClInclude Include="Util\JsonUtil.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="Util\MathUtil.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="Util\PathUtil.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="ModuleBase.h" />
+    <ClInclude Include="ModuleBaseApi.h" />
+    <ClInclude Include="Util\ZipUtil.h">
+      <Filter>Util</Filter>
+    </ClInclude>
+    <ClInclude Include="Http\Server\Consts.h">
+      <Filter>Http\Server</Filter>
+    </ClInclude>
+    <ClInclude Include="Version.h" />
+    <ClInclude Include="resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Common\System.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="Database\Base\DBBase.cpp">
+      <Filter>Database\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="Database\Base\EntityBase.cpp">
+      <Filter>Database\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="Database\Orm\QdOrmBuilder.cpp">
+      <Filter>Database\Orm</Filter>
+    </ClCompile>
+    <ClCompile Include="Database\Orm\QdOrmClass.cpp">
+      <Filter>Database\Orm</Filter>
+    </ClCompile>
+    <ClCompile Include="Database\Orm\QdOrmDml.cpp">
+      <Filter>Database\Orm</Filter>
+    </ClCompile>
+    <ClCompile Include="Database\Orm\QdOrmFactory.cpp">
+      <Filter>Database\Orm</Filter>
+    </ClCompile>
+    <ClCompile Include="Database\Orm\QdOrmMember.cpp">
+      <Filter>Database\Orm</Filter>
+    </ClCompile>
+    <ClCompile Include="Database\Orm\QdOrmWhere.cpp">
+      <Filter>Database\Orm</Filter>
+    </ClCompile>
+    <ClCompile Include="Http\Client\Client.cpp">
+      <Filter>Http\Client</Filter>
+    </ClCompile>
+    <ClCompile Include="Http\Client\DownloadTask.cpp">
+      <Filter>Http\Client</Filter>
+    </ClCompile>
+    <ClCompile Include="Http\Client\NormalTask.cpp">
+      <Filter>Http\Client</Filter>
+    </ClCompile>
+    <ClCompile Include="Http\Client\Request.cpp">
+      <Filter>Http\Client</Filter>
+    </ClCompile>
+    <ClCompile Include="Http\Client\Response.cpp">
+      <Filter>Http\Client</Filter>
+    </ClCompile>
+    <ClCompile Include="Http\Client\Task.cpp">
+      <Filter>Http\Client</Filter>
+    </ClCompile>
+    <ClCompile Include="Http\Client\TaskAdapter.cpp">
+      <Filter>Http\Client</Filter>
+    </ClCompile>
+    <ClCompile Include="Http\Client\UploadTask.cpp">
+      <Filter>Http\Client</Filter>
+    </ClCompile>
+    <ClCompile Include="Http\Server\Router.cpp">
+      <Filter>Http\Server</Filter>
+    </ClCompile>
+    <ClCompile Include="Log\Log.cpp">
+      <Filter>Log</Filter>
+    </ClCompile>
+    <ClCompile Include="Service\AsyncService.cpp">
+      <Filter>Service</Filter>
+    </ClCompile>
+    <ClCompile Include="Service\ServiceManager.cpp">
+      <Filter>Service</Filter>
+    </ClCompile>
+    <ClCompile Include="Service\SyncService.cpp">
+      <Filter>Service</Filter>
+    </ClCompile>
+    <ClCompile Include="Util\JsonUtil.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="Util\MathUtil.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="Util\PathUtil.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="ModuleBase.cpp" />
+    <ClCompile Include="Util\ZipUtil.cpp">
+      <Filter>Util</Filter>
+    </ClCompile>
+    <ClCompile Include="Common\ActionSequence.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Database\Orm\README.md">
+      <Filter>Database\Orm</Filter>
+    </None>
+    <None Include="README.md" />
+    <None Include="Database\Inl\QdOrmDaoDelete.inl">
+      <Filter>Database\Inl</Filter>
+    </None>
+    <None Include="Database\Inl\QdOrmDaoFetch.inl">
+      <Filter>Database\Inl</Filter>
+    </None>
+    <None Include="Database\Inl\QdOrmDaoInsert.inl">
+      <Filter>Database\Inl</Filter>
+    </None>
+    <None Include="Database\Inl\QdOrmDaoSave.inl">
+      <Filter>Database\Inl</Filter>
+    </None>
+    <None Include="Database\Inl\QdOrmDaoTable.inl">
+      <Filter>Database\Inl</Filter>
+    </None>
+    <None Include="Database\Inl\QdOrmDaoUpdate.inl">
+      <Filter>Database\Inl</Filter>
+    </None>
+    <None Include="Database\Inl\QdOrmDaoAggregate.inl">
+      <Filter>Database\Inl</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="Http\Client\Client.h">
+      <Filter>Http\Client</Filter>
+    </QtMoc>
+    <QtMoc Include="Http\Client\DownloadTask.h">
+      <Filter>Http\Client</Filter>
+    </QtMoc>
+    <QtMoc Include="Http\Client\NormalTask.h">
+      <Filter>Http\Client</Filter>
+    </QtMoc>
+    <QtMoc Include="Http\Client\Request.h">
+      <Filter>Http\Client</Filter>
+    </QtMoc>
+    <QtMoc Include="Http\Client\Response.h">
+      <Filter>Http\Client</Filter>
+    </QtMoc>
+    <QtMoc Include="Http\Client\Task.h">
+      <Filter>Http\Client</Filter>
+    </QtMoc>
+    <QtMoc Include="Http\Client\TaskAdapter.h">
+      <Filter>Http\Client</Filter>
+    </QtMoc>
+    <QtMoc Include="Http\Client\UploadTask.h">
+      <Filter>Http\Client</Filter>
+    </QtMoc>
+    <QtMoc Include="Service\AsyncService.h">
+      <Filter>Service</Filter>
+    </QtMoc>
+    <QtMoc Include="Service\Service.h">
+      <Filter>Service</Filter>
+    </QtMoc>
+    <QtMoc Include="Service\ServiceManager.h">
+      <Filter>Service</Filter>
+    </QtMoc>
+    <QtMoc Include="Service\SyncService.h">
+      <Filter>Service</Filter>
+    </QtMoc>
+    <QtMoc Include="Common\ActionSequence.h">
+      <Filter>Common</Filter>
+    </QtMoc>
+    <QtMoc Include="Http\Server\Router.h">
+      <Filter>Http\Server</Filter>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="ModuleBase.rc" />
+  </ItemGroup>
+</Project>

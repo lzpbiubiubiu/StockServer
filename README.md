@@ -1,2 +1,3 @@
-# StockServer
-Stock Server
+# PosServer
+
+POS Instore Server程序
