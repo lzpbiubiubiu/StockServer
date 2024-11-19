@@ -87,7 +87,6 @@ const QString HTTP_SERVER_SELECT_ORDER_REPORT_ERROR = "1007";
 const QString HTTP_SERVER_SELECT_INSUFFICIENT_STOCK_ERROR = "1008";
 
 
-
 namespace Http
 {
     // 错误码displayMsg定义

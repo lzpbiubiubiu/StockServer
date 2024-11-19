@@ -26,6 +26,9 @@ namespace Extra
         QSharedPointer<Sql::DBBase> GetBusinessDatabase(const QDate& date);
         QSharedPointer<Sql::DBBase> GetBusinessDatabase(const QString& name);
 
+        /** 获取交易临时数据库 */
+        QSharedPointer<Sql::DBBase> GetTempDatabase();
+
     protected:
         /**
          * 创建SQLite数据库

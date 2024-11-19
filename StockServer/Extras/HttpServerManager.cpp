@@ -11,6 +11,8 @@
 #include "ModuleProtocol/Server/Terminal/UserLoginRouter.h"
 #include "ModuleProtocol/Server/Storage/ModifyConfigWareRouter.h"
 #include "ModuleProtocol/Server/Sale/QueryOrderReportRouter.h"
+#include "ModuleProtocol/Server/Sale/QueryOrderStockListRouter.h"
+#include "ModuleProtocol/Server/Sale/ModifyStockOrderRouter.h"
 
 namespace Extra
 {
@@ -40,6 +42,8 @@ namespace Extra
         RegistServerRouter(Http::UserLoginRouterPtr::create());
         RegistServerRouter(Http::ModifyConfigWareRouterPtr::create());
         RegistServerRouter(Http::QueryOrderReportRouterPtr::create());
+        RegistServerRouter(Http::QueryOrderStockListRouterPtr::create());
+        RegistServerRouter(Http::ModifyStockOrderRouterPtr::create());
 
         return true;
     }

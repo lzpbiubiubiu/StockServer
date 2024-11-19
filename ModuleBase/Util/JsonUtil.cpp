@@ -20,6 +20,21 @@ namespace Base
         return ToJsonObject(str.toUtf8());
     }
 
+    QJsonArray JsonUtil::ToJsonArray(const QByteArray& byteData)
+    {
+        QJsonParseError error;
+        QJsonDocument doc = QJsonDocument::fromJson(byteData, &error);
+        if (error.error != QJsonParseError::NoError)
+            return {};
+
+        return doc.array();
+    }
+
+    QJsonArray JsonUtil::ToJsonArray(const QString& str)
+    {
+        return ToJsonArray(str.toUtf8());
+    }
+
     QString JsonUtil::ToString(const QJsonObject& jsonObj, bool indent /*= false*/)
     {
         QJsonDocument doc(jsonObj);

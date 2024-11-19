@@ -188,7 +188,7 @@ namespace Http
                 return;
             }
 
-            auto bussinessDb = Base::GetService<Extra::DatabaseManager>()->GetBusinessDatabase(order->time.date());
+            auto bussinessDb = Base::GetService<Extra::DatabaseManager>()->GetTempDatabase();
             Sql::DmlBase<Sql::OrderEntity> dml;
             dml.SetDatabase(bussinessDb);
 

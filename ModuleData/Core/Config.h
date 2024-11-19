@@ -12,7 +12,10 @@
 /** 版本号文件 */
 #define VERSION_FILE (Base::PathUtil::GetApplicationDir() + "Version.json")
 
-/** 数据库名称 */
+/** 临时数据库名称 */
+#define TEMP_DATABASE_NAME ("Temp")
+
+/** 交易数据库名称 */
 #define BUSINESS_DATABASE_NAME ("Bussiness")
 
 /** 配置数据库名称 */

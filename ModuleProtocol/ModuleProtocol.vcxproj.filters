@@ -28,6 +28,12 @@
     <ClCompile Include="Server\Sale\QueryOrderReportRouter.cpp">
       <Filter>Server\Sale</Filter>
     </ClCompile>
+    <ClCompile Include="Server\Sale\QueryOrderStockListRouter.cpp">
+      <Filter>Server\Sale</Filter>
+    </ClCompile>
+    <ClCompile Include="Server\Sale\ModifyStockOrderRouter.cpp">
+      <Filter>Server\Sale</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Server">
@@ -63,6 +69,12 @@
       <Filter>Server\Storage</Filter>
     </QtMoc>
     <QtMoc Include="Server\Sale\QueryOrderReportRouter.h">
+      <Filter>Server\Sale</Filter>
+    </QtMoc>
+    <QtMoc Include="Server\Sale\QueryOrderStockListRouter.h">
+      <Filter>Server\Sale</Filter>
+    </QtMoc>
+    <QtMoc Include="Server\Sale\ModifyStockOrderRouter.h">
       <Filter>Server\Sale</Filter>
     </QtMoc>
   </ItemGroup>

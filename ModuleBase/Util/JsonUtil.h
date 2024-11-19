@@ -7,6 +7,7 @@
 */
 
 #include <QJsonObject>
+#include <QJsonArray>
 
 #include "ModuleBase/ModuleBaseApi.h"
 
@@ -23,6 +24,12 @@ namespace Base
 
         /** 字符串转QJsonObject */
         static QJsonObject ToJsonObject(const QString& str);
+
+        /** QByteArray转QJsonArray */
+        static QJsonArray ToJsonArray(const QByteArray& byteData);
+
+        /** 字符串转QJsonArray */
+        static QJsonArray ToJsonArray(const QString& str);
 
         /** QJsonObject转字符串 */
         static QString ToString(const QJsonObject& jsonObj, bool indent = false);

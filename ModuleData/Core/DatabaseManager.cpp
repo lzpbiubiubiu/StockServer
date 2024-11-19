@@ -72,6 +72,27 @@ namespace Extra
             return CreateDatabase<Sql::BusinessDB>(fileName);
     }
 
+    QSharedPointer<Sql::DBBase> DatabaseManager::GetTempDatabase()
+    {
+        QString fileName = Base::PathUtil::GetDatabaseDir() + TEMP_DATABASE_NAME + ".db";
+        if(m_databasePool.contains(fileName))
+            return m_databasePool[fileName];
+        else
+        {
+            QSharedPointer<Sql::BusinessDB> saleDb = CreateDatabase<Sql::BusinessDB>(fileName);
+            //数据库有问题
+            if(saleDb.isNull())
+            {
+                //直接删除数据库
+                QFile::remove(fileName);
+
+                //再创建新的数据库一次
+                saleDb = CreateDatabase<Sql::BusinessDB>(fileName);
+            }
+            return saleDb;
+        }
+    }
+
     template<typename T>
     QSharedPointer<T> DatabaseManager::CreateDatabase(const QString& name)
     {
@@ -261,6 +282,9 @@ namespace Extra
             return false;
 
         if(GetBusinessDatabase(QDate::currentDate()).isNull())
+            return false;
+
+        if(GetTempDatabase().isNull())
             return false;
         
         return true;
