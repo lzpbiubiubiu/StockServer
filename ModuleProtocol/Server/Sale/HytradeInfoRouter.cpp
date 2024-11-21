@@ -176,7 +176,8 @@ namespace Http
         // 不存在异常商品
         if (tradeErrorWareArr.isEmpty())
         {
-            Sql::ConfigWareEntityPtrList entities = wareEntityMap.values();
+            // 不扣减库存
+            /*Sql::ConfigWareEntityPtrList entities = wareEntityMap.values();
             if (!dml.UpdateList(entities, sqlError))
             {
                 LOG_ERROR("update config wares stock failed sql error: {}", sqlError.toStdString());
@@ -186,7 +187,7 @@ namespace Http
                 reponse->displayMsg = QStringLiteral("商品库存扣减Sql执行失败");
                 reponse->traceId = header.traceId;
                 return;
-            }
+            }*/
 
             auto bussinessDb = Base::GetService<Extra::DatabaseManager>()->GetTempDatabase();
             Sql::DmlBase<Sql::OrderEntity> dml;
