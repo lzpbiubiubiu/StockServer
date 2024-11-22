@@ -53,8 +53,13 @@ ApplicationWindow {
         menu: Menu {
 
             MenuItem {
-                text: "Quit"
+                text: "退出"
                 onTriggered: app.quit()
+            }
+
+            MenuItem {
+                text: "最小化"
+                onTriggered: mainWindow.tray()
             }
         }
 

@@ -9,9 +9,6 @@
 /** 程序配置文件 */
 #define APP_CACHE_FILE (Base::PathUtil::GetDataDir() + "App.json")
 
-/** 版本号文件 */
-#define VERSION_FILE (Base::PathUtil::GetApplicationDir() + "Version.json")
-
 /** 临时数据库名称 */
 #define TEMP_DATABASE_NAME ("Temp")
 
@@ -56,12 +53,6 @@ namespace Core
         {
             /** 渲染器 */
             Render render = Render::RENDER_HARDWARE;
-
-            /** 主屏语言 */
-            QString lang;
-
-            /** ip */
-            QString ip;
 
             /** 端口 */
             int port = 9090;

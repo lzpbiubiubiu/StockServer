@@ -10,16 +10,16 @@
 /** 日志子系统 */
 enum LogSystem
 {
-    /** POS_SERVER */
-    POS_SERVER = 0,
+    /** STOCK_SERVER */
+    STOCK_SERVER = 0,
 };
 
-#define LOG_TRACE(...)                    SPDLOG_LOGGER_TRACE(Base::GetLogger(POS_SERVER), __VA_ARGS__)
-#define LOG_DEBUG(...)                    SPDLOG_LOGGER_DEBUG(Base::GetLogger(POS_SERVER), __VA_ARGS__)
-#define LOG_INFO(...)                     SPDLOG_LOGGER_INFO(Base::GetLogger(POS_SERVER), __VA_ARGS__)
-#define LOG_WARN(...)                     SPDLOG_LOGGER_WARN(Base::GetLogger(POS_SERVER), __VA_ARGS__)
-#define LOG_ERROR(...)                    SPDLOG_LOGGER_ERROR(Base::GetLogger(POS_SERVER), __VA_ARGS__)
-#define LOG_CRITICAL(...)                 SPDLOG_LOGGER_CRITICAL(Base::GetLogger(POS_SERVER), __VA_ARGS__)
+#define LOG_TRACE(...)                    SPDLOG_LOGGER_TRACE(Base::GetLogger(STOCK_SERVER), __VA_ARGS__)
+#define LOG_DEBUG(...)                    SPDLOG_LOGGER_DEBUG(Base::GetLogger(STOCK_SERVER), __VA_ARGS__)
+#define LOG_INFO(...)                     SPDLOG_LOGGER_INFO(Base::GetLogger(STOCK_SERVER), __VA_ARGS__)
+#define LOG_WARN(...)                     SPDLOG_LOGGER_WARN(Base::GetLogger(STOCK_SERVER), __VA_ARGS__)
+#define LOG_ERROR(...)                    SPDLOG_LOGGER_ERROR(Base::GetLogger(STOCK_SERVER), __VA_ARGS__)
+#define LOG_CRITICAL(...)                 SPDLOG_LOGGER_CRITICAL(Base::GetLogger(STOCK_SERVER), __VA_ARGS__)
 
 namespace Base
 {
