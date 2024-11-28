@@ -54,6 +54,9 @@ namespace Core
             /** 渲染器 */
             Render render = Render::RENDER_HARDWARE;
 
+            /** IP地址 */
+            QString ip = "127.0.0.1";
+
             /** 端口 */
             int port = 9090;
         } app;

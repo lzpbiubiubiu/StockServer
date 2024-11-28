@@ -1,7 +1,6 @@
 ﻿#include "ModuleBase/Common/System.h"
 #include "ModuleBase/Service/ServiceManager.h"
 #include "ModuleData/Core/GlobalData.h"
-#include "Extras/ConnectivityManager.h"
 #include "StatusBar.h"
 
 namespace UI
@@ -11,9 +10,6 @@ namespace UI
     {
         m_configManager = Base::GetService<Extra::ConfigManager>();
         m_timer = new QTimer(this);
-
-        connect(m_configManager, &Extra::ConfigManager::signalLoadDeviceSuccess,
-            this, &StatusBar::onLoadDeviceSuccess);
         connect(m_timer, &QTimer::timeout, this, &StatusBar::onTimeout);
 
         m_timer->setInterval(1000);
@@ -22,34 +18,6 @@ namespace UI
 
     StatusBar::~StatusBar()
     {}
-
-    const QString StatusBar::GetStoreName() const
-    {
-        return m_storeName;
-    }
-
-    void StatusBar::SetStoreName(const QString& storeName)
-    {
-        if(m_storeName != storeName)
-        {
-            m_storeName = storeName;
-            emit signalSotreNameChanged();
-        }
-    }
-
-    const QString& StatusBar::GetDeviceId() const
-    {
-        return m_deviceId;
-    }
-
-    void StatusBar::SetDeviceId(const QString& deviceId)
-    {
-        if(m_deviceId != deviceId)
-        {
-            m_deviceId = deviceId;
-            emit signalDeviceIdChanged();
-        }
-    }
 
     const QString& StatusBar::GetVersion() const
     {
@@ -100,13 +68,7 @@ namespace UI
 
     void StatusBar::onTimeout()
     {
-        auto nm = Base::GetService<Extra::ConnectivityManager>();
-
-        // 网络状态
-        if(nm && nm->IsOnlineServiceConnected())
-            SetNetState(true);
-        else
-            SetNetState(false);
+        SetNetState(true);
 
         // 系统时间
         QDateTime currentTime = Base::System::GetCurrentDateTime();
@@ -117,7 +79,5 @@ namespace UI
     {
         const auto& config = Core::GlobalData::Get()->GetConfig();
         SetVersion(config.version.string);
-        SetStoreName(config.device.storeName);
-        SetDeviceId(config.device.deviceId);
     }
 }

@@ -106,9 +106,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Application.cpp" />
+    <ClCompile Include="Extras\ConfigManager.cpp" />
     <ClCompile Include="Extras\GarbageManager.cpp" />
     <ClCompile Include="Extras\HttpServerManager.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="UI\Component\StockWarePanel.cpp" />
+    <ClCompile Include="UI\Component\StatusBar.cpp" />
     <ClCompile Include="UI\MainWindow.cpp" />
     <ClCompile Include="UI\Page\Controller\MainPageController.cpp" />
     <ClCompile Include="UI\Page\Controller\PageController.cpp" />
@@ -123,7 +126,10 @@
     <QtMoc Include="UI\MainWindow.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Qml\Component\FileDialog.qml" />
     <None Include="Qml\Component\qmldir" />
+    <None Include="Qml\Component\StatusBar.qml" />
+    <None Include="Qml\Component\StockWarePanel.qml" />
     <None Include="Qml\Component\UIButton.qml" />
     <None Include="Qml\Component\UICalendarDialog.qml" />
     <None Include="Qml\Component\UIDialog.qml" />
@@ -147,10 +153,13 @@
     <QtMoc Include="UI\Page\Controller\PageController.h" />
   </ItemGroup>
   <ItemGroup>
+    <QtMoc Include="UI\Component\StockWarePanel.h" />
+    <QtMoc Include="UI\Component\StatusBar.h" />
     <QtMoc Include="UI\Page\Controller\MainPageController.h" />
     <QtMoc Include="UI\Page\MainPage.h" />
     <QtMoc Include="Extras\HttpServerManager.h" />
     <QtMoc Include="Extras\GarbageManager.h" />
+    <QtMoc Include="Extras\ConfigManager.h" />
     <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>

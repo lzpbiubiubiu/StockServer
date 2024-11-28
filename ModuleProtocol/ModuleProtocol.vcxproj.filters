@@ -7,6 +7,15 @@
     <ClInclude Include="Server\Terminal\UserLoginRouter.h">
       <Filter>Server\Terminal</Filter>
     </ClInclude>
+    <ClInclude Include="Server\Example\GetHiRouter.h">
+      <Filter>Server\Example</Filter>
+    </ClInclude>
+    <ClInclude Include="Server\Example\PostHelloRouter.h">
+      <Filter>Server\Example</Filter>
+    </ClInclude>
+    <ClInclude Include="Server\Download\DownloadFileRouter.h">
+      <Filter>Server\Download</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ModuleProtocol.cpp" />
@@ -34,6 +43,15 @@
     <ClCompile Include="Server\Sale\ModifyStockOrderRouter.cpp">
       <Filter>Server\Sale</Filter>
     </ClCompile>
+    <ClCompile Include="Server\Example\GetHiRouter.cpp">
+      <Filter>Server\Example</Filter>
+    </ClCompile>
+    <ClCompile Include="Server\Example\PostHelloRouter.cpp">
+      <Filter>Server\Example</Filter>
+    </ClCompile>
+    <ClCompile Include="Server\Download\DownloadFileRouter.cpp">
+      <Filter>Server\Download</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Server">
@@ -47,6 +65,12 @@
     </Filter>
     <Filter Include="Server\Storage">
       <UniqueIdentifier>{5a3bae17-a7d9-4387-bcac-ea10fd272c5d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Server\Download">
+      <UniqueIdentifier>{2e983d5b-4864-4fca-abaf-2986eca51a81}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Server\Example">
+      <UniqueIdentifier>{9078cbb4-0eba-4fff-9747-20a76119abe0}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

@@ -6,6 +6,7 @@
 #include "ModuleBase/Service/ServiceManager.h"
 #include "Extras/HttpServerManager.h"
 #include "Extras/GarbageManager.h"
+#include "Extras/ConfigManager.h"
 #include "Application.h"
 
 int main(int argc, char *argv[])
@@ -49,6 +50,7 @@ int main(int argc, char *argv[])
     */
 
     Base::ServiceManager::Get()->AddService<Extra::DatabaseManager>();
+    Base::ServiceManager::Get()->AddService<Extra::ConfigManager>();
     Base::ServiceManager::Get()->AddService<Extra::HttpServerManager>();
     Base::ServiceManager::Get()->AddService<Extras::GarbageManager>();
     

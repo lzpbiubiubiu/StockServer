@@ -32,6 +32,12 @@ namespace Sql
         // 商品批发价格
         ORM_REGISTER_COLUMN(qint64, WholesalePrice, "wholesale_price")
 
+        // 商品文件名称
+        ORM_REGISTER_COLUMN(QString, ImageFileName, "image_file_name")
+
+        // 商品文件MD5
+        ORM_REGISTER_COLUMN(QString, ImageMd5, "image_md5")
+
         // 扩展字段（通常是JSON格式字符串）
         ORM_REGISTER_COLUMN(QString, Extension, "extension")
     };

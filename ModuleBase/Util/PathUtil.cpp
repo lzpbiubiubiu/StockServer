@@ -143,12 +143,6 @@ namespace Base
         return CreateDir(dirPath);
     }
 
-    QString PathUtil::GetOfflinePacketDir()
-    {
-        QString dirPath = GetFileStationDir() + "OfflinePacket/";
-        return CreateDir(dirPath);
-    }
-
     QString PathUtil::GetAppPatchDir()
     {
         static QString tempPosDir = GetTempDir() + "Patch/App/";

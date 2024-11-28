@@ -31,10 +31,6 @@ namespace Extra
 
     private:
         void RegistServerRouter(Http::RouterPtr router);
-
-        bool WriteAppCache(const QString& fileName) const;
-
-        bool ReadAppCache(const QString& fileName) const;
     private:
         httplib::Server m_server;
 

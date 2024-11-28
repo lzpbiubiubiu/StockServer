@@ -63,9 +63,6 @@ namespace Http
         auto uniqueId = object["uniqueId"].toString();
         auto operate = object["operate"].toInt();
         auto code = object["wareCode"].toString();
-        auto name = object["wareName"].toString();
-        auto retailPrice = object["retailPrice"].toVariant().toLongLong();
-        auto wholeSalePrice = object["wholeSalePrice"].toVariant().toLongLong();
 
         // 赋值返回数据
         reponse = HttpServerResponsePtr::create();
@@ -73,6 +70,9 @@ namespace Http
         // 操作类型operate, 1:新增 2:更新
         if (1 == operate)
         {
+            auto name = object["wareName"].toString();
+            auto retailPrice = object["retailPrice"].toVariant().toLongLong();
+            auto wholeSalePrice = object["wholeSalePrice"].toVariant().toLongLong();
             auto stock = object["stock"].toVariant().toLongLong();
             entitiy->SetCode(code);
             entitiy->SetName(name);
@@ -101,9 +101,23 @@ namespace Http
                 reponse->traceId = header.traceId;
                 return;
             }
-            entitiy->SetName(name);
-            entitiy->SetRetailPrice(retailPrice);
-            entitiy->SetWholesalePrice(wholeSalePrice);
+            if(object.contains("name"))
+            {
+                entitiy->SetName(object["name"].toString());
+            }
+            if(object.contains("retailPrice"))
+            {
+                entitiy->SetRetailPrice(object["retailPrice"].toVariant().toLongLong());
+            }
+            if(object.contains("wholeSalePrice"))
+            {
+                entitiy->SetWholesalePrice(object["wholeSalePrice"].toVariant().toLongLong());
+            }
+            if(object.contains("stock"))
+            {
+                entitiy->SetStock(object["stock"].toVariant().toLongLong());
+            }
+
             if (!dml.UpdateById(entitiy, QStringList(), sqlError))
             {
                 reponse->code = HTTP_SERVER_SQL_ERROR;

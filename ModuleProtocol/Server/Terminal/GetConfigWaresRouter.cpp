@@ -2,6 +2,7 @@
 #include "ModuleBase/Database/Base/DmlBase.h"
 #include "ModuleBase/Service/ServiceManager.h"
 #include "ModuleData/Core/GlobalStructData.h"
+#include "ModuleData/Core/GlobalData.h"
 #include "ModuleData/Core/DatabaseManager.h"
 #include "ModuleData/Core/ConvertUtil.h"
 #include "ModuleData/Entity/ConfigWareEntity.h"
@@ -61,6 +62,8 @@ namespace Http
             return;
         }
 
+        const auto& app = Core::GlobalData::Get()->GetConfig().app;
+        auto imgUrl = QString("http://%1:%2/instore/download/").arg(app.ip).arg(app.port);
         Core::ConfigWarePtrList configWares;
         configWares = Core::ConvertUtil::FromEntityList(entities);
         QJsonArray configWaresJsonArray;
@@ -73,6 +76,8 @@ namespace Http
             configWareObj["wholesalePrice"] = item->wholesalePrice;
             configWareObj["stock"] = item->stock;
             configWareObj["extension"] = item->extension;
+            configWareObj["imageUrl"] = imgUrl + item->imageFileName;
+            configWareObj["imageMd5"] = item->imageMd5;
             configWaresJsonArray.append(configWareObj);
         }
         reponse->code = HTTP_SERVER_SUCCESS;

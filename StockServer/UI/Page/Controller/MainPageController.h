@@ -3,6 +3,7 @@
 #include "PageController.h"
 #include "UI/Page/MainPage.h"
 #include "ModuleBase/Service/ServiceManager.h"
+#include "Extras/ConfigManager.h"
 
 namespace UI
 {
@@ -14,6 +15,12 @@ namespace UI
         MainPageController(Page* parent);
 
         virtual ~MainPageController();
+
+        /** 商品项点击 */
+        Q_INVOKABLE void itemClicked(int index);
+
+        /** 商品商品图片 */
+        Q_INVOKABLE void uploadWareImage(int wareIndex, const QString& imgPath);
 
     protected:
         /** 页面加载时回调 */
@@ -29,9 +36,18 @@ namespace UI
         virtual void OnPageUnload() override;
 
     protected Q_SLOTS:
+        /** 加载配置商品列表信号处理 */
+        void onLoadConfigWaresSuccess();
+
+        /** 上传商品图片信息信号处理*/
+        void onUploadConfigWareImageSuccess(int index, Core::ConfigWarePtr item);
+        void onUploadConfigWareImageError(const QString& msg);
 
     private:
         // 页面
         MainPage* m_page = nullptr;
+
+        // 配置管理器
+        Extra::ConfigManager* m_configManager = nullptr;
     };
 }

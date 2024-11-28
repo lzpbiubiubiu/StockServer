@@ -18,6 +18,9 @@
     <QtMoc Include="Server\Sale\QueryOrderReportRouter.h" />
     <QtMoc Include="Server\Sale\QueryOrderStockListRouter.h" />
     <QtMoc Include="Server\Sale\ModifyStockOrderRouter.h" />
+    <ClInclude Include="Server\Download\DownloadFileRouter.h" />
+    <ClInclude Include="Server\Example\GetHiRouter.h" />
+    <ClInclude Include="Server\Example\PostHelloRouter.h" />
     <ClInclude Include="Server\Terminal\UserLoginRouter.h" />
     <QtMoc Include="Server\Sale\HytradeInfoRouter.h" />
     <QtMoc Include="Server\Terminal\GetConfigWaresRouter.h" />
@@ -25,6 +28,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ModuleProtocol.cpp" />
+    <ClCompile Include="Server\Download\DownloadFileRouter.cpp" />
+    <ClCompile Include="Server\Example\GetHiRouter.cpp" />
+    <ClCompile Include="Server\Example\PostHelloRouter.cpp" />
     <ClCompile Include="Server\Sale\HytradeInfoRouter.cpp" />
     <ClCompile Include="Server\Sale\ModifyStockOrderRouter.cpp" />
     <ClCompile Include="Server\Sale\QueryOrderReportRouter.cpp" />

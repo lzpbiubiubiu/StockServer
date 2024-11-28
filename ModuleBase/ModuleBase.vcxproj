@@ -12,6 +12,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h" />
+    <ClInclude Include="Util\PriceUtil.h" />
     <ClInclude Include="Version.h" />
     <QtMoc Include="Common\ActionSequence.h" />
     <ClInclude Include="Common\Singleton.h" />
@@ -81,6 +82,7 @@
     <ClCompile Include="Util\JsonUtil.cpp" />
     <ClCompile Include="Util\MathUtil.cpp" />
     <ClCompile Include="Util\PathUtil.cpp" />
+    <ClCompile Include="Util\PriceUtil.cpp" />
     <ClCompile Include="Util\ZipUtil.cpp" />
   </ItemGroup>
   <ItemGroup>

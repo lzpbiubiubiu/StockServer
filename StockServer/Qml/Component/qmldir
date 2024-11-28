@@ -10,3 +10,4 @@ StatusBar			1.0 StatusBar.qml
 UILabelButton		1.0 UILabelButton.qml
 UIImageButton		1.0 UIImageButton.qml
 FileDialog			1.0 FileDialog.qml
+StockWarePanel		1.0 StockWarePanel.qml

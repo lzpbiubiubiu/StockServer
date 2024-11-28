@@ -15,6 +15,7 @@
 #include "ModuleProtocol/Server/Sale/QueryOrderReportRouter.h"
 #include "ModuleProtocol/Server/Sale/QueryOrderStockListRouter.h"
 #include "ModuleProtocol/Server/Sale/ModifyStockOrderRouter.h"
+#include "ModuleProtocol/Server/Download/DownloadFileRouter.h"
 
 namespace Extra
 {
@@ -39,6 +40,7 @@ namespace Extra
 
         // 注册路由
         RegistServerRouter(heartbeat);
+        RegistServerRouter(Http::DownloadFileRouterPtr::create());
         RegistServerRouter(Http::GetConfigWaresRouterPtr::create());
         RegistServerRouter(Http::HytradeInfoRouterPtr::create());
         RegistServerRouter(Http::UserLoginRouterPtr::create());
@@ -78,11 +80,6 @@ namespace Extra
             LOG_ERROR("http server has an error,start failed...");
             return;
         }
-        // 读取配置文件
-        if(!QFile::exists(APP_CACHE_FILE))
-            WriteAppCache(APP_CACHE_FILE);
-        else
-            ReadAppCache(APP_CACHE_FILE);
 
         // 设置路由方法
         for(const auto& router : m_serverRouters)
@@ -117,66 +114,5 @@ namespace Extra
         // 监听端口
         const auto& app = Core::GlobalData::Get()->GetConfig().app;
         m_server.listen("0.0.0.0", app.port);
-    }
-
-    bool HttpServerManager::WriteAppCache(const QString& fileName) const
-    {
-        QFile file(fileName);
-        if(!file.open(QIODevice::WriteOnly))
-        {
-            LOG_ERROR(QString("%1 file open failed").arg(fileName).toStdString());
-            return false;
-        }
-
-        const auto& app = Core::GlobalData::Get()->GetConfig().app;
-        QJsonObject root;
-        if(app.render == Core::Render::RENDER_SOFTWARE)
-            root["render"] = "software";
-        else if(app.render == Core::Render::RENDER_HARDWARE)
-            root["render"] = "hardware";
-        else
-            Q_ASSERT_X(0, "WriteApp()", "render type is invalid");
-        root["port"] = app.port;
-
-        QJsonDocument doc;
-        doc.setObject(root);
-        file.write(doc.toJson(QJsonDocument::Indented));
-        file.flush();
-        file.close();
-        return true;
-    }
-
-    bool HttpServerManager::ReadAppCache(const QString& fileName) const
-    {
-        auto& app = Core::GlobalData::Get()->GetConfig().app;
-
-        QFile file(fileName);
-        if(!file.open(QIODevice::ReadOnly))
-        {
-            LOG_ERROR(QString("%1 file open failed").arg(fileName).toStdString());
-            return false;
-        }
-        QByteArray data = file.readAll();
-        file.close();
-
-        QJsonParseError parseError;
-        QJsonDocument doc = QJsonDocument::fromJson(data, &parseError);
-        if(parseError.error != QJsonParseError::NoError)
-        {
-            LOG_ERROR(QString("%1 json parse failed").arg(fileName).toStdString());
-            return false;
-        }
-
-        QJsonObject root = doc.object();
-        if(root["render"].toString().compare("software", Qt::CaseInsensitive) == 0)
-            app.render = Core::Render::RENDER_SOFTWARE;
-        else if(root["render"].toString().compare("hardware", Qt::CaseInsensitive) == 0)
-            app.render = Core::Render::RENDER_HARDWARE;
-        else
-            Q_ASSERT_X(0, "ReadApp()", "render type is invalid");
-
-        app.port = root["port"].toVariant().toLongLong();
-
-        return true;
     }
 }

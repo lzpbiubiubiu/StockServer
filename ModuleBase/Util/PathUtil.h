@@ -47,9 +47,6 @@ namespace Base
         /** 获取文件站目录 C:/Users/用户名/Documents/PosServer/FileStation/ */
         static QString GetFileStationDir();
 
-        /** 获取离线服务数据包路径 C:/Users/用户名/Documents/PosServer/FileStation/OfflinePacket/ */
-        static QString GetOfflinePacketDir();
-
         /** 获取补丁下载路径 C:/Users/用户/AppData/Local/Temp/Patch/App/ */
         static QString GetAppPatchDir();
     };

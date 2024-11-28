@@ -17,6 +17,8 @@ namespace UI
         Q_ASSERT_X(m_window != nullptr, "MainWindow", component.errorString().toUtf8());
 
         m_window->setScreen(QApplication::primaryScreen());
+
+        m_statusBar = new StatusBar(this);
         
 #ifndef _DEBUG
         SetFullScreen(true);

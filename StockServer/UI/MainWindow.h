@@ -12,6 +12,7 @@
 #include <QSharedPointer>
 #include <QString>
 #include "UI/Page/Page.h"
+#include "UI/Component/StatusBar.h"
 
 namespace UI
 {
@@ -22,6 +23,7 @@ namespace UI
         Q_PROPERTY(int loadingRefCount READ GetLoadingRefCount WRITE SetLoadingRefCount NOTIFY signalLoadingRefCountChanged)
         Q_PROPERTY(bool trayVisible READ IsTrayVisible WRITE SetTrayVisible NOTIFY signalTrayVisibleChanged)
         Q_PROPERTY(QObject* item MEMBER m_window CONSTANT)
+        Q_PROPERTY(QObject* statusBar MEMBER m_statusBar CONSTANT)
 
     public:
         MainWindow(QSharedPointer<QQmlEngine> engine);
@@ -97,5 +99,8 @@ namespace UI
 
         // 是否显示托盘
         bool m_trayVisible = true;
+
+        // 状态栏
+        StatusBar* m_statusBar = nullptr;
     };
 } // namespace UI

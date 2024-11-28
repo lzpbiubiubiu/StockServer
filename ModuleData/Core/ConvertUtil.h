@@ -14,6 +14,8 @@ namespace Core
     {
     public:
         // Sql::ConfigWareEntity <=> Core::ConfigWare
+        static Sql::ConfigWareEntityPtr ToEntity(Core::ConfigWarePtr order);
+        static Sql::ConfigWareEntityPtrList ToEntityList(const Core::ConfigWarePtrList& orders);
         static Core::ConfigWarePtr FromEntity(Sql::ConfigWareEntityPtr entity);
         static Core::ConfigWarePtrList FromEntityList(const Sql::ConfigWareEntityPtrList& entities);
 

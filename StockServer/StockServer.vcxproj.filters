@@ -72,6 +72,15 @@
     <ClCompile Include="Extras\GarbageManager.cpp">
       <Filter>Extras</Filter>
     </ClCompile>
+    <ClCompile Include="Extras\ConfigManager.cpp">
+      <Filter>Extras</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\Component\StatusBar.cpp">
+      <Filter>UI\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\Component\StockWarePanel.cpp">
+      <Filter>UI\Component</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="Application.h" />
@@ -95,6 +104,15 @@
     </QtMoc>
     <QtMoc Include="Extras\GarbageManager.h">
       <Filter>Extras</Filter>
+    </QtMoc>
+    <QtMoc Include="Extras\ConfigManager.h">
+      <Filter>Extras</Filter>
+    </QtMoc>
+    <QtMoc Include="UI\Component\StatusBar.h">
+      <Filter>UI\Component</Filter>
+    </QtMoc>
+    <QtMoc Include="UI\Component\StockWarePanel.h">
+      <Filter>UI\Component</Filter>
     </QtMoc>
   </ItemGroup>
   <ItemGroup>
@@ -145,6 +163,15 @@
     </None>
     <None Include="Qml\Page\MainPage.qml">
       <Filter>Qml\Page</Filter>
+    </None>
+    <None Include="Qml\Component\StockWarePanel.qml">
+      <Filter>Qml\Component</Filter>
+    </None>
+    <None Include="Qml\Component\StatusBar.qml">
+      <Filter>Qml\Component</Filter>
+    </None>
+    <None Include="Qml\Component\FileDialog.qml">
+      <Filter>Qml\Component</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>

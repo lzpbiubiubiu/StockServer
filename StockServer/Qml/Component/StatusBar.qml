@@ -18,29 +18,6 @@ Rectangle {
         spacing: 16
 
         Text {
-            id: storeName
-
-            Layout.alignment: Qt.AlignVCenter
-            color: "#FFFFFF"
-            font.weight: Font.Normal
-            font.pixelSize: 11
-            font.family: UIConfig.fontFamily
-            elide: Text.ElideRight
-            text: mainWindow.statusBar.storeName
-        }
-
-        Text {
-            id: deviceId
-
-            Layout.alignment: Qt.AlignVCenter
-            color: "#FFFFFF"
-            font.weight: Font.Normal
-            font.pixelSize: 11
-            font.family: UIConfig.fontFamily
-            text: mainWindow.statusBar.deviceId
-        }
-
-        Text {
             id: version
 
             Layout.alignment: Qt.AlignVCenter
@@ -49,6 +26,7 @@ Rectangle {
             font.pixelSize: 11
             font.family: UIConfig.fontFamily
             text: "V"+ mainWindow.statusBar.version
+            visible: false
         }
 
         Item {
@@ -58,7 +36,6 @@ Rectangle {
 
         Image {
             id: network
-
             Layout.alignment: Qt.AlignVCenter
             source: mainWindow.statusBar.netState ? "qrc:/Resources/Images/network_ok.svg" :
                                          "qrc:/Resources/Images/network_error.svg"
@@ -66,7 +43,6 @@ Rectangle {
 
         Text {
             id: time
-
             Layout.alignment: Qt.AlignVCenter
             color: "#FFFFFF"
             font.weight: Font.Normal
@@ -86,7 +62,7 @@ Rectangle {
         UILabelButton {
             id: trayButton
 
-            Layout.preferredWidth: 54
+            Layout.preferredWidth: 60
             Layout.preferredHeight: 16
             Layout.alignment: Qt.AlignVCenter
             source: "qrc:/Resources/Images/tray.svg"
@@ -104,7 +80,7 @@ Rectangle {
         UILabelButton {
             id: exitButton
 
-            Layout.preferredWidth: 52
+            Layout.preferredWidth: 56
             Layout.preferredHeight: 16
             Layout.alignment: Qt.AlignVCenter
             source: "qrc:/Resources/Images/quit.svg"

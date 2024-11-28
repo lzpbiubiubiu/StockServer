@@ -6,6 +6,26 @@
 
 namespace Core
 {
+    Sql::ConfigWareEntityPtr ConvertUtil::ToEntity(Core::ConfigWarePtr ware)
+    {
+        auto entity = Sql::ConfigWareEntityPtr::create();
+        entity->SetCode(ware->code);
+        entity->SetName(ware->name);
+        entity->SetRetailPrice(ware->retailPrice);
+        entity->SetWholesalePrice(ware->wholesalePrice);
+        entity->SetStock(ware->stock);
+        entity->SetImageFileName(ware->imageFileName);
+        entity->SetImageMd5(ware->imageMd5);
+        entity->SetExtension(QString(QJsonDocument(ware->extension).toJson(QJsonDocument::Compact)));
+        return entity;
+    }
+    Sql::ConfigWareEntityPtrList ConvertUtil::ToEntityList(const Core::ConfigWarePtrList& orders)
+    {
+        Sql::ConfigWareEntityPtrList list;
+        for (auto i : orders)
+            list << ToEntity(i);
+        return list;
+    }
     Core::ConfigWarePtr ConvertUtil::FromEntity(Sql::ConfigWareEntityPtr entity)
     {
         auto item = Core::ConfigWarePtr::create();
@@ -14,6 +34,8 @@ namespace Core
         item->retailPrice = entity->GetRetailPrice();
         item->wholesalePrice = entity->GetWholesalePrice();
         item->stock = entity->GetStock();
+        item->imageFileName = entity->GetImageFileName();
+        item->imageMd5 = entity->GetImageMd5();
         item->extension = Base::JsonUtil::ToJsonObject(entity->GetExtension());
         return item;
     }

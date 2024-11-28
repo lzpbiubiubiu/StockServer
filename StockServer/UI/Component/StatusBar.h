@@ -11,8 +11,6 @@ namespace UI
     class StatusBar : public QObject
     {
         Q_OBJECT
-        Q_PROPERTY(QString storeName READ GetStoreName NOTIFY signalSotreNameChanged)
-        Q_PROPERTY(QString deviceId READ GetDeviceId WRITE SetDeviceId NOTIFY signalDeviceIdChanged)
         Q_PROPERTY(QString version READ GetVersion WRITE SetVersion NOTIFY signalVersionChanged)
         Q_PROPERTY(QString time READ GetTime WRITE SetTime NOTIFY signalTimeChanged)
         Q_PROPERTY(bool netState READ GetNetState WRITE SetNetState NOTIFY signalNetStateChanged)
@@ -20,12 +18,6 @@ namespace UI
     public:
         StatusBar(QObject* parent = nullptr);
         ~StatusBar();
-
-        const QString GetStoreName() const;
-        void SetStoreName(const QString& storeName);
-
-        const QString& GetDeviceId() const;
-        void SetDeviceId(const QString& deviceId);
 
         const QString& GetVersion() const;
         void SetVersion(const QString& version);
@@ -44,18 +36,11 @@ namespace UI
         void onLoadDeviceSuccess();
 
     Q_SIGNALS:
-        void signalSotreNameChanged();
-        void signalDeviceIdChanged();
         void signalVersionChanged();
         void signalTimeChanged();
         void signalNetStateChanged();
         
     private:
-        // 门店名
-        QString m_storeName;
-
-        // 设备id
-        QString m_deviceId;
 
         // 版本号
         QString m_version = "0.0.0.0";

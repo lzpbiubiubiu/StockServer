@@ -14,7 +14,6 @@ namespace Core
     /** 配置商品 */
     struct ConfigWare
     {
-
         /** 名称 */
         QString name;
 
@@ -29,6 +28,12 @@ namespace Core
 
         /** 单品批发价格 */
         qint64 wholesalePrice = 0;
+
+        /** 图片名称 */
+        QString imageFileName;
+
+        /** 图片Md5 */
+        QString imageMd5 = 0;
 
         /** 扩展字段 */
         QJsonObject extension;

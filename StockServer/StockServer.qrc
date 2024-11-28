@@ -24,5 +24,10 @@
         <file>Resources/Images/refresh.svg</file>
         <file>Resources/Images/tray.svg</file>
         <file>Qml/Page/MainPage.qml</file>
+        <file>Qml/Component/StockWarePanel.qml</file>
+        <file>Qml/Component/StatusBar.qml</file>
+        <file>Resources/Images/default_ware.svg</file>
+        <file>Qml/Component/FileDialog.qml</file>
+        <file>Resources/Images/ware_bk.svg</file>
     </qresource>
 </RCC>
