@@ -165,4 +165,14 @@ namespace Extra
         }
         emit signalUploadConfigWareImageSuccess(index, wareItem);
     }
+
+    void ConfigManager::onAddConfigWareSuccess(Core::ConfigWarePtr item)
+    {
+        emit signalAddConfigWareSuccess(item);
+    }
+
+    void ConfigManager::onUpdateConfigWareSuccess(Core::ConfigWarePtr item)
+    {
+        emit signalUpdateConfigWareSuccess(item);
+    }
 }

@@ -57,12 +57,11 @@ namespace Http
         Core::ConfigWarePtr configWare = Core::ConfigWarePtr::create();
         Sql::DmlBase<Sql::ConfigWareEntity> dml;
         dml.SetDatabase(db);
-        Sql::ConfigWareEntityPtr entitiy = Sql::ConfigWareEntityPtr::create();
         QString sqlError;
 
         auto uniqueId = object["uniqueId"].toString();
         auto operate = object["operate"].toInt();
-        auto code = object["wareCode"].toString();
+        configWare->code = object["wareCode"].toString();
 
         // 赋值返回数据
         reponse = HttpServerResponsePtr::create();
@@ -70,15 +69,11 @@ namespace Http
         // 操作类型operate, 1:新增 2:更新
         if (1 == operate)
         {
-            auto name = object["wareName"].toString();
-            auto retailPrice = object["retailPrice"].toVariant().toLongLong();
-            auto wholeSalePrice = object["wholeSalePrice"].toVariant().toLongLong();
-            auto stock = object["stock"].toVariant().toLongLong();
-            entitiy->SetCode(code);
-            entitiy->SetName(name);
-            entitiy->SetRetailPrice(retailPrice);
-            entitiy->SetWholesalePrice(wholeSalePrice);
-            entitiy->SetStock(stock);
+            configWare->name = object["wareName"].toString();
+            configWare->retailPrice = object["retailPrice"].toVariant().toLongLong();
+            configWare->wholesalePrice = object["wholeSalePrice"].toVariant().toLongLong();
+            configWare->stock = object["stock"].toVariant().toLongLong();
+            Sql::ConfigWareEntityPtr entitiy = Core::ConvertUtil::ToEntity(configWare);
             if (!dml.Add(entitiy, sqlError))
             {
                 reponse->code = HTTP_SERVER_SQL_ERROR;
@@ -88,10 +83,12 @@ namespace Http
                 reponse->traceId = header.traceId;
                 return;
             }
+
+            emit signalAddConfigWareSuccess(configWare);
         }
         else if (2 == operate)
         {
-            entitiy->SetCode(code);
+            Sql::ConfigWareEntityPtr entitiy = Core::ConvertUtil::ToEntity(configWare);
             if (!dml.FindById(entitiy, sqlError))
             {
                 reponse->code = HTTP_SERVER_SELECT_CONFIG_WARE_ERROR;
@@ -101,9 +98,9 @@ namespace Http
                 reponse->traceId = header.traceId;
                 return;
             }
-            if(object.contains("name"))
+            if(object.contains("wareName"))
             {
-                entitiy->SetName(object["name"].toString());
+                entitiy->SetName(object["wareName"].toString());
             }
             if(object.contains("retailPrice"))
             {
@@ -127,6 +124,10 @@ namespace Http
                 reponse->traceId = header.traceId;
                 return;
             }
+
+            configWare = Core::ConvertUtil::FromEntity(entitiy);
+
+            emit signalUpdateConfigWareSuccess(configWare);
         }
 
         reponse->code = HTTP_SERVER_SUCCESS;

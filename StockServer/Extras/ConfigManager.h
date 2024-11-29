@@ -31,6 +31,13 @@ namespace Extra
         bool ReadAppCache(const QString& fileName) const;
 
         Q_INVOKABLE void onUploadWareImage(int index, const QString& imgPath);
+    public Q_SLOTS:
+        /** 增加配置商品信号处理 */
+        void onAddConfigWareSuccess(Core::ConfigWarePtr item);
+
+        /** 更新配置商品信号处理 */
+        void onUpdateConfigWareSuccess(Core::ConfigWarePtr item);
+
     Q_SIGNALS:
         /** 加载配置商品列表信号 */
         void signalLoadConfigWaresSuccess();
@@ -39,6 +46,9 @@ namespace Extra
         void signalUploadConfigWareImageError(const QString& msg);
         void signalUploadConfigWareImageSuccess(int index, Core::ConfigWarePtr item);
 
+        /** 修改配置商品成功信号 */
+        void  signalAddConfigWareSuccess(Core::ConfigWarePtr item);
+        void  signalUpdateConfigWareSuccess(Core::ConfigWarePtr item);
     private:
 
         // 配置商品列表

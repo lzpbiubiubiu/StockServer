@@ -43,6 +43,12 @@ namespace UI
         void onUploadConfigWareImageSuccess(int index, Core::ConfigWarePtr item);
         void onUploadConfigWareImageError(const QString& msg);
 
+        /** 增加配置商品信号处理 */
+        void onAddConfigWareSuccess(Core::ConfigWarePtr item);
+
+        /** 更新配置商品信号处理 */
+        void onUpdateConfigWareSuccess(Core::ConfigWarePtr item);
+
     private:
         // 页面
         MainPage* m_page = nullptr;

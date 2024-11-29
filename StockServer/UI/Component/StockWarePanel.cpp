@@ -46,6 +46,29 @@ namespace UI
         }
     }
 
+    void StockWarePanelModel::AddItem(const StockWareItem& item)
+    {
+        // 插入
+        beginInsertRows(QModelIndex(), 0, 0);
+        m_items.prepend(item);
+        endInsertRows();
+    }
+
+    int StockWarePanelModel::GetIndex(const QString& code)
+    {
+        int index = -1;
+        for(int i = 0; i < m_items.size(); i++)
+        {
+            if(m_items[i].code == code)
+            {
+                index = i;
+                break;
+            }
+        }
+
+        return index;
+    }
+
     int StockWarePanelModel::rowCount(const QModelIndex& parent) const
     {
         return m_items.size();
@@ -149,5 +172,9 @@ namespace UI
     void StockWarePanel::OnUpdateItem(int index, const Core::ConfigWarePtr item)
     {
         m_modelData->UpdateItem(index, item);
+    }
+    void StockWarePanel::OnAddItem(const Core::ConfigWarePtr item)
+    {
+        m_modelData->AddItem(GetPanelItem(item));
     }
 }

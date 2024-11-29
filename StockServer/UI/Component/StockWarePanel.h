@@ -66,6 +66,12 @@ namespace UI
         /** 更新子项 */
         void UpdateItem(int index, Core::ConfigWarePtr item);
 
+        /** 添加子项 */
+        void AddItem(const StockWareItem& item);
+
+        /** 通过code找index */
+        int GetIndex(const QString& code);
+
         virtual int rowCount(const QModelIndex& parent = QModelIndex()) const override;
 
         virtual QVariant data(const QModelIndex& index, int role) const override;
@@ -104,6 +110,10 @@ namespace UI
 
         /** 修改商品信息 */
         void OnUpdateItem(int index, const Core::ConfigWarePtr item);
+
+        /** 添加商品 */
+        void OnAddItem(const Core::ConfigWarePtr item);
+
     Q_SIGNALS:
 
     private:

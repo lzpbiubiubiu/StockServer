@@ -2,6 +2,7 @@
 #include <QJsonDocument>
 #include "HttpServerManager.h"
 #include "TerminalManager.h"
+#include "ConfigManager.h"
 #include "ModuleBase/Log/Log.h"
 #include "ModuleBase/Service/ServiceManager.h"
 #include "ModuleData/Core/GlobalData.h"
@@ -37,6 +38,7 @@ namespace Extra
     bool HttpServerManager::OnStart()
     {
         auto heartbeat = Http::HeartbeatRouterPtr::create();
+        auto modiftConfigWare = Http::ModifyConfigWareRouterPtr::create();
 
         // 注册路由
         RegistServerRouter(heartbeat);
@@ -44,11 +46,13 @@ namespace Extra
         RegistServerRouter(Http::GetConfigWaresRouterPtr::create());
         RegistServerRouter(Http::HytradeInfoRouterPtr::create());
         RegistServerRouter(Http::UserLoginRouterPtr::create());
-        RegistServerRouter(Http::ModifyConfigWareRouterPtr::create());
+        RegistServerRouter(modiftConfigWare);
         RegistServerRouter(Http::QueryOrderReportRouterPtr::create());
         RegistServerRouter(Http::QueryOrderStockListRouterPtr::create());
         RegistServerRouter(Http::ModifyStockOrderRouterPtr::create());
 
+        connect(modiftConfigWare.get(), &Http::ModifyConfigWareRouter::signalAddConfigWareSuccess, Base::GetService<Extra::ConfigManager>(), &Extra::ConfigManager::onAddConfigWareSuccess);
+        connect(modiftConfigWare.get(), &Http::ModifyConfigWareRouter::signalUpdateConfigWareSuccess, Base::GetService<Extra::ConfigManager>(), &Extra::ConfigManager::onUpdateConfigWareSuccess);
         return true;
     }
 

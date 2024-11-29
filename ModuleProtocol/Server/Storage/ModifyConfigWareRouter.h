@@ -2,7 +2,7 @@
 
 #include "ModuleBase/Http/Server/Router.h"
 #include "ModuleProtocol/ModuleProtocolApi.h"
-
+#include "ModuleData/Core/GlobalStructData.h"
 namespace Http
 {
     /** 修改配置商品 */
@@ -32,6 +32,12 @@ namespace Http
         /** 路由处理方法 */
         virtual void OnRouteHandler(const httplib::Request& req, httplib::Response& res,
             const HttpServerHeader& header, HttpServerResponsePtr& reponse) override;
+
+    Q_SIGNALS:
+
+        /** 修改配置商品成功信号 */
+        void  signalAddConfigWareSuccess(Core::ConfigWarePtr item);
+        void  signalUpdateConfigWareSuccess(Core::ConfigWarePtr item);
     };
 
     using ModifyConfigWareRouterPtr = QSharedPointer<ModifyConfigWareRouter>;

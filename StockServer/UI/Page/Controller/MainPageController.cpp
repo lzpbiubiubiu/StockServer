@@ -14,6 +14,8 @@ namespace UI
         connect(m_configManager, &Extra::ConfigManager::signalLoadConfigWaresSuccess, this, &MainPageController::onLoadConfigWaresSuccess);
         connect(m_configManager, &Extra::ConfigManager::signalUploadConfigWareImageError, this, &MainPageController::onUploadConfigWareImageError);
         connect(m_configManager, &Extra::ConfigManager::signalUploadConfigWareImageSuccess, this, &MainPageController::onUploadConfigWareImageSuccess);
+        connect(m_configManager, &Extra::ConfigManager::signalAddConfigWareSuccess, this, &MainPageController::onAddConfigWareSuccess);
+        connect(m_configManager, &Extra::ConfigManager::signalUpdateConfigWareSuccess, this, &MainPageController::onUpdateConfigWareSuccess);
         
     }
 
@@ -70,6 +72,22 @@ namespace UI
     {
         UI::Application::GetMainWindow()->CloseLoading();
         UI::Application::Get()->GetMainWindow()->ShowMessageBox("Message", msg);
+    }
+
+    void MainPageController::onAddConfigWareSuccess(Core::ConfigWarePtr item)
+    {
+        if(!item)
+            return;
+        m_page->GetStockWarePanel()->OnAddItem(item);
+    }
+
+    void MainPageController::onUpdateConfigWareSuccess(Core::ConfigWarePtr item)
+    {
+        if(!item)
+            return;
+        auto stockWarePanel = m_page->GetStockWarePanel();
+        auto index = stockWarePanel->GetModel()->GetIndex(item->code);
+        stockWarePanel->OnUpdateItem(index, item);
     }
 
     void MainPageController::onLoadConfigWaresSuccess()
