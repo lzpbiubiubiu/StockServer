@@ -46,6 +46,7 @@ Page {
                         id: right
                         Layout.preferredWidth: parent.width * 0.3
                         Layout.fillHeight: true
+                        visible: left.count > 0
 
                         ColumnLayout {
                             anchors.fill: parent

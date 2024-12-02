@@ -76,7 +76,7 @@ namespace Http
             configWareObj["wholesalePrice"] = item->wholesalePrice;
             configWareObj["stock"] = item->stock;
             configWareObj["extension"] = item->extension;
-            configWareObj["imageUrl"] = imgUrl + item->imageFileName;
+            configWareObj["imageUrl"] = (item->imageFileName.isEmpty() ? "" : (imgUrl + item->imageFileName));
             configWareObj["imageMd5"] = item->imageMd5;
             configWaresJsonArray.append(configWareObj);
         }

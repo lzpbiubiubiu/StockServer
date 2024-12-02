@@ -2,6 +2,7 @@
 #include "ModuleBase/Service/ServiceManager.h"
 #include "ModuleBase/Util/MathUtil.h"
 #include "ModuleData/Core/GlobalStructData.h"
+#include "ModuleData/Core/GlobalData.h"
 #include "ModuleData/Core/DatabaseManager.h"
 #include "ModuleData/Entity/ConfigWareEntity.h"
 #include "ModuleData/Core/ConvertUtil.h"
@@ -95,6 +96,8 @@ namespace Http
         // 赋值返回数据
         reponse = HttpServerResponsePtr::create();
 
+        //auto& warePreoccupiedStockMap = Core::GlobalData::Get()->GetConfig().warePreoccupiedStockMap;
+
         QMap<QString, Sql::ConfigWareEntityPtr> wareEntityMap;
         QJsonArray tradeErrorWareArr;
         
@@ -108,6 +111,17 @@ namespace Http
             if (wareEntityMap.contains(wareCode))
             {
                 wareEntity = wareEntityMap[wareCode];
+
+                // 判断商品是否存在预占库存
+                //if(warePreoccupiedStockMap.contains(wareCode))
+                //{
+                //    // 还需要减去预占的商品库存
+                //    wareStock = wareEntity->GetStock() - warePreoccupiedStockMap[wareCode];
+                //}
+                //else
+                //{
+                //    wareStock = wareEntity->GetStock();
+                //}
                 wareStock = wareEntity->GetStock();
                 if (wareStock < saleCount)
                 {

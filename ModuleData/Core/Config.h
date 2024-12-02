@@ -68,8 +68,8 @@ namespace Core
             bool restart = false;
         } exit;
 
-        /** 商品配置 */
-        Core::ConfigWarePtrList configWares;
+        /** 商品预占库存集合 */
+        QHash<QString, qint64> warePreoccupiedStockMap;
     };
 }
 Q_DECLARE_METATYPE(Core::CommonConfig)

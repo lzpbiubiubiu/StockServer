@@ -221,7 +221,8 @@ namespace Http
                 reponse->data["uniqueId"] = uniqueId;
                 return;
             }
-            
+
+            //不需要在备货清单里边修改订单销售相关数据
             auto order = Core::ConvertUtil::FromEntity(orderEntity);
             order->orderAmount = stockOrderDetailObj["orderAmount"].toVariant().toLongLong();
             order->totalPromotionAmount = stockOrderDetailObj["totalPromotionAmount"].toVariant().toLongLong();
@@ -238,8 +239,9 @@ namespace Http
                     }
                 }
             }
-
             orderEntity = Core::ConvertUtil::ToEntity(order);
+
+            orderEntity->SetExtension(stockOrderDetailObj["extension"].toString());
             result = dml.UpdateById(orderEntity, QStringList(), sqlError);
             if(!result)
             {
